@@ -1,0 +1,890 @@
+{
+ "Replika": {
+  "Company": "Replika",
+  "tags": ["audio", "avatar", "chatbot"],
+  "Free": false,
+  "Website": "https://replika.com",
+  "Function / Use": "AI Avatar",
+  "Logo URL": "https://logo.clearbit.com/replika.com"
+},
+"ChatGPT (OpenAI)": {
+  "Company": "OpenAI",
+  "tags": ["featured", "assistants", "code", "write", "chatbot", "marketing"],
+  "Free": true,
+  "Website": "https://chat.openai.com",
+  "Function / Use": "AI Assistant",
+  "Logo URL": "https://logo.clearbit.com/openai.com"
+},
+"Claude (Anthropic)": {
+  "Company": "Anthropic",
+  "tags": ["featured", "assistants", "code", "write", "chatbot", "marketing"],
+  "Free": true,
+  "Website": "https://claude.ai",
+  "Function / Use": "AI Assistant",
+  "Logo URL": "https://logo.clearbit.com/anthropic.com"
+},
+"Perplexity AI": {
+  "Company": "Perplexity",
+  "tags": ["featured", "assistants", "write", "analysis", "marketing"],
+  "Free": true,
+  "Website": "https://www.perplexity.ai",
+  "Function / Use": "AI Search Assistant",
+  "Logo URL": "https://logo.clearbit.com/perplexity.ai"
+},
+"Gemini (Google)": {
+  "Company": "Google",
+  "tags": ["featured", "assistants", "code", "write", "marketing"],
+  "Free": true,
+  "Website": "https://gemini.google.com",
+  "Function / Use": "AI Assistant",
+  "Logo URL": "https://logo.clearbit.com/google.com"
+},
+"Midjourney": {
+  "Company": "Midjourney",
+  "tags": ["images", "realistic", "artistic"],
+  "Free": false,
+  "Website": "https://www.midjourney.com",
+  "Function / Use": "Image Generation",
+  "Logo URL": "https://logo.clearbit.com/midjourney.com"
+},
+"Leonardo.ai": {
+  "Company": "Leonardo",
+  "tags": ["images", "video", "artistic", "design"],
+  "Free": false,
+  "Website": "https://leonardo.ai",
+  "Function / Use": "AI Image & Video Generation",
+  "Logo URL": "https://logo.clearbit.com/leonardo.ai"
+},
+"Runway ML": {
+  "Company": "Runway",
+  "tags": ["featured", "video", "editing", "animation"],
+  "Free": true,
+  "Website": "https://runwayml.com",
+  "Function / Use": "AI Video Editing",
+  "Logo URL": "https://logo.clearbit.com/runwayml.com"
+},
+"DALL-E (OpenAI)": {
+  "Company": "OpenAI",
+  "tags": ["images", "artistic", "design", "realistic"],
+  "Free": true,
+  "Website": "https://openai.com/dall-e",
+  "Function / Use": "AI Image Generation",
+  "Logo URL": "https://logo.clearbit.com/openai.com"
+  },
+  "Descript": {
+  "Company": "Descript",
+  "tags": ["audio", "video", "editing", "podcast"],
+  "Free": true,
+  "Website": "https://www.descript.com",
+  "Function / Use": "Video/Audio Editing",
+  "Logo URL": "https://logo.clearbit.com/descript.com"
+},
+"Synthesia": {
+  "Company": "Synthesia",
+  "tags": ["video", "avatar", "animation"],
+  "Free": false,
+  "Website": "https://www.synthesia.io",
+  "Function / Use": "AI Video Presentations",
+  "Logo URL": "https://logo.clearbit.com/synthesia.io"
+},
+"Figma AI": {
+  "Company": "Figma",
+  "tags": ["images", "design"],
+  "Free": true,
+  "Website": "https://www.figma.com/design-ai",
+  "Function / Use": "Design Tool with AI",
+  "Logo URL": "https://logo.clearbit.com/figma.com"
+},
+"Canva AI": {
+  "Company": "Canva",
+  "tags": ["images", "design", "avatar", "retouch"],
+  "Free": true,
+  "Website": "https://www.canva.com",
+  "Function / Use": "Graphic Design with AI",
+  "Logo URL": "https://logo.clearbit.com/canva.com"
+},
+"HeyGen": {
+  "Company": "HeyGen",
+  "tags": ["video", "avatar", "animation"],
+  "Free": false,
+  "Website": "https://www.heygen.com",
+  "Function / Use": "AI Avatar Videos",
+  "Logo URL": "https://logo.clearbit.com/heygen.com"
+},
+"Pika Labs": {
+  "Company": "Pika Labs",
+  "tags": ["video", "animation", "generation"],
+  "Free": true,
+  "Website": "https://www.pika.art",
+  "Function / Use": "AI Video Generator",
+  "Logo URL": "https://logo.clearbit.com/pika.art"
+},
+"DeepL": {
+  "Company": "DeepL",
+  "tags": ["write", "analysis"],
+  "Free": true,
+  "Website": "https://www.deepl.com",
+  "Function / Use": "Translation AI",
+  "Logo URL": "https://logo.clearbit.com/deepl.com"
+},
+"GitHub Copilot": {
+  "Company": "GitHub",
+  "tags": ["code", "frontend", "backend"],
+  "Free": false,
+  "Website": "https://github.com/features/copilot",
+  "Function / Use": "AI Coding Assistant",
+  "Logo URL": "https://logo.clearbit.com/github.com"
+},
+"Jasper": {
+  "Company": "Jasper",
+  "tags": ["write", "marketing"],
+  "Free": false,
+  "Website": "https://www.jasper.ai",
+  "Function / Use": "AI Writing Assistant",
+  "Logo URL": "https://logo.clearbit.com/jasper.ai"
+},
+"ElevenLabs": {
+  "Company": "ElevenLabs",
+  "tags": ["audio", "cloning", "voice"],
+  "Free": true,
+  "Website": "https://www.elevenlabs.io",
+  "Function / Use": "AI Voice Generation",
+  "Logo URL": "https://logo.clearbit.com/elevenlabs.io"
+  },
+  "Adobe Firefly": {
+    "Company": "Adobe",
+    "tags": ["images", "artistic", "realistic"],
+    "Free": true,
+    "Website": "https://firefly.adobe.com",
+    "Function / Use": "AI Image Generation",
+    "Logo URL": "https://logo.clearbit.com/adobe.com"
+  },
+  "Stable Diffusion": {
+    "Company": "Stability AI",
+    "tags": ["images", "artistic", "realistic"],
+    "Free": true,
+    "Website": "https://stability.ai",
+    "Function / Use": "Image & Video Generation",
+    "Logo URL": "https://logo.clearbit.com/stability.ai"
+  },
+  "Krea.ai": {
+    "Company": "Krea.ai",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://krea.ai",
+    "Function / Use": "AI Design Generation",
+    "Logo URL": "https://logo.clearbit.com/krea.ai"
+  },
+  "Copy.ai": {
+    "Company": "Copy.ai",
+    "tags": ["write", "marketing", "rewrite"],
+    "Free": true,
+    "Website": "https://www.copy.ai",
+    "Function / Use": "AI Copywriting Assistant",
+    "Logo URL": "https://logo.clearbit.com/copy.ai"
+  },
+  "Anyword": {
+    "Company": "Anyword",
+    "tags": ["write", "marketing"],
+    "Free": false,
+    "Website": "https://anyword.com",
+    "Function / Use": "Marketing Copy Generator",
+    "Logo URL": "https://logo.clearbit.com/anyword.com"
+  },
+  "DeepMotion": {
+    "Company": "DeepMotion",
+    "tags": ["video", "animation"],
+    "Free": false,
+    "Website": "https://www.deepmotion.com",
+    "Function / Use": "AI Motion Capture",
+    "Logo URL": "https://logo.clearbit.com/deepmotion.com"
+  },
+  "Framer": {
+    "Company": "Framer",
+    "tags": ["code", "frontend"],
+    "Free": true,
+    "Website": "https://framer.com",
+    "Function / Use": "AI Website Builder",
+    "Logo URL": "https://logo.clearbit.com/framer.com"
+  },
+  "Uizard": {
+    "Company": "Uizard",
+    "tags": ["images", "design"],
+    "Free": true,
+    "Website": "https://uizard.io",
+    "Function / Use": "UI/UX Design Tool",
+    "Logo URL": "https://logo.clearbit.com/uizard.io"
+  },
+  "Relume": {
+    "Company": "Relume",
+    "tags": ["code", "frontend", "automation"],
+    "Free": true,
+    "Website": "https://relume.io",
+    "Function / Use": "AI Website Generator",
+    "Logo URL": "https://logo.clearbit.com/relume.io"
+  },
+  "Figmadesign": {
+    "Company": "Figma",
+    "tags": ["images", "design"],
+    "Free": true,
+    "Website": "https://www.figma.com",
+    "Function / Use": "Design Platform",
+    "Logo URL": "https://logo.clearbit.com/figma.com"
+  },
+  "Magician": {
+    "Company": "Magician",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://magician.design",
+    "Function / Use": "AI Design Plugin",
+    "Logo URL": "https://logo.clearbit.com/magician.design"
+  },
+  "Optimizely AI": {
+    "Company": "Optimizely",
+    "tags": ["code", "frontend"],
+    "Free": false,
+    "Website": "https://www.optimizely.com",
+    "Function / Use": "Web Experimentation & Personalization",
+    "Logo URL": "https://logo.clearbit.com/optimizely.com"
+  },
+  "Hotjar AI": {
+    "Company": "Hotjar",
+    "tags": ["code", "automation"],
+    "Free": true,
+    "Website": "https://www.hotjar.com",
+    "Function / Use": "User Analytics & Feedback",
+    "Logo URL": "https://logo.clearbit.com/hotjar.com"
+  },
+  "Maze AI": {
+    "Company": "Maze",
+    "tags": ["code", "automation"],
+    "Free": true,
+    "Website": "https://maze.co",
+    "Function / Use": "Product Research & Testing",
+    "Logo URL": "https://logo.clearbit.com/maze.co"
+  },
+  "Lately AI": {
+    "Company": "Lately",
+    "tags": ["write", "marketing"],
+    "Free": false,
+    "Website": "https://www.lately.ai",
+    "Function / Use": "Marketing Content Generation",
+    "Logo URL": "https://logo.clearbit.com/lately.ai"
+  },
+  "DeepFont": {
+    "Company": "DeepFont",
+    "tags": ["images", "design"],
+    "Free": true,
+    "Website": "https://deepfont.com",
+    "Function / Use": "AI Font Recognition",
+    "Logo URL": "https://logo.clearbit.com/deepfont.com"
+  },
+  "Fontjoy": {
+    "Company": "Fontjoy",
+    "tags": ["images", "design"],
+    "Free": true,
+    "Website": "https://fontjoy.com",
+    "Function / Use": "Font Pairing Tool",
+    "Logo URL": "https://logo.clearbit.com/fontjoy.com"
+  },
+  "Spline": {
+    "Company": "Spline",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://spline.design",
+    "Function / Use": "3D Design Tool",
+    "Logo URL": "https://logo.clearbit.com/spline.design"
+  },
+  "Kaedim": {
+    "Company": "Kaedim",
+    "tags": ["images", "artistic", "design"],
+    "Free": false,
+    "Website": "https://www.kaedim3d.com",
+    "Function / Use": "3D Asset Generation",
+    "Logo URL": "https://logo.clearbit.com/kaedim3d.com"
+  },
+  "Tripo3D": {
+    "Company": "Tripo3D",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://tripo3d.ai",
+    "Function / Use": "3D Modeling from Text",
+    "Logo URL": "https://logo.clearbit.com/tripo3d.ai"
+  },
+  "Meshy.ai": {
+    "Company": "Meshy",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://meshy.ai",
+    "Function / Use": "3D AI Design Platform",
+    "Logo URL": "https://logo.clearbit.com/meshy.ai"
+  },
+  "Luma AI": {
+    "Company": "Luma AI",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://lumalabs.ai",
+    "Function / Use": "3D Content from Videos",
+    "Logo URL": "https://logo.clearbit.com/lumalabs.ai"
+  },
+  "Vizcom": {
+    "Company": "Vizcom",
+    "tags": ["images", "artistic", "design"],
+    "Free": true,
+    "Website": "https://www.vizcom.ai",
+    "Function / Use": "Industrial Design & Concept Sketching",
+    "Logo URL": "https://logo.clearbit.com/vizcom.ai"
+  },
+  "MetaHuman Creator": {
+    "Company": "Epic Games",
+    "tags": ["images", "avatar", "artistic"],
+    "Free": true,
+    "Website": "https://www.unrealengine.com/en-US/metahuman",
+    "Function / Use": "Photorealistic Digital Humans",
+    "Logo URL": "https://logo.clearbit.com/unrealengine.com"
+  },
+  "RunwayML (Image)": {
+    "Company": "Runway",
+    "tags": ["images", "realistic", "artistic"],
+    "Free": true,
+    "Website": "https://runwayml.com",
+    "Function / Use": "Image Editing & Generation",
+    "Logo URL": "https://logo.clearbit.com/runwayml.com"
+  },
+  "Dream Machine": {
+    "Company": "Luma AI",
+    "tags": ["video", "generation", "animation"],
+    "Free": true,
+    "Website": "https://lumalabs.ai/dream-machine",
+    "Function / Use": "AI-Generated Video",
+    "Logo URL": "https://logo.clearbit.com/lumalabs.ai"
+  },
+  "CapCut": {
+    "Company": "ByteDance",
+    "tags": ["video", "editing", "analysis"],
+    "Free": true,
+    "Website": "https://www.capcut.com",
+    "Function / Use": "Video Editing Suite",
+    "Logo URL": "https://logo.clearbit.com/capcut.com"
+  },
+  "DaVinci Resolve AI": {
+    "Company": "Blackmagic Design",
+    "tags": ["video", "editing", "analysis"],
+    "Free": true,
+    "Website": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "Function / Use": "Advanced Video Editing",
+    "Logo URL": "https://logo.clearbit.com/blackmagicdesign.com"
+  },
+  "Kling": {
+    "Company": "Kuaishou",
+    "tags": ["video", "avatar", "animation"],
+    "Free": false,
+    "Website": "https://www.kuaishou.com",
+    "Function / Use": "Text-to-Video AI",
+    "Logo URL": "https://logo.clearbit.com/kuaishou.com"
+  },
+  "Veed": {
+    "Company": "Veed.io",
+    "tags": ["video", "editing", "analysis"],
+    "Free": true,
+    "Website": "https://www.veed.io",
+    "Function / Use": "Online Video Editor",
+    "Logo URL": "https://logo.clearbit.com/veed.io"
+  },
+  "Wisecut": {
+    "Company": "Wisecut",
+    "tags": ["video", "editing", "analysis"],
+    "Free": true,
+    "Website": "https://www.wisecut.video",
+    "Function / Use": "AI Video Editing",
+    "Logo URL": "https://logo.clearbit.com/wisecut.video"
+  },
+  "Make Klips": {
+    "Company": "Klips AI",
+    "tags": ["video", "editing"],
+    "Free": true,
+    "Website": "https://www.makeklips.com",
+    "Function / Use": "Clip Generator from Long Video",
+    "Logo URL": "https://logo.clearbit.com/makeklips.com"
+  },
+  "Stormgenie": {
+    "Company": "Stormgenie",
+    "tags": ["video"],
+    "Free": true,
+    "Website": "https://stormgenie.com",
+    "Function / Use": "Video Ad Generator",
+    "Logo URL": "https://logo.clearbit.com/stormgenie.com"
+  },
+  "Magic Hour": {
+    "Company": "Magic Hour",
+    "tags": ["video", "animation", "avatar"],
+    "Free": true,
+    "Website": "https://magichour.ai",
+    "Function / Use": "AI Video Studio",
+    "Logo URL": "https://logo.clearbit.com/magichour.ai"
+  },
+  "Freepix AI Video": {
+    "Company": "Freepik",
+    "tags": ["video", "animation"],
+    "Free": true,
+    "Website": "https://www.freepik.com",
+    "Function / Use": "Video Content AI",
+    "Logo URL": "https://logo.clearbit.com/freepik.com"
+  },
+  "Crayo": {
+    "Company": "Crayo",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://crayo.ai",
+    "Function / Use": "Marketing Copy AI",
+    "Logo URL": "https://logo.clearbit.com/crayo.ai"
+  },
+  "Crayon AI": {
+    "Company": "Crayon",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://www.crayon.co",
+    "Function / Use": "Competitive Intelligence",
+    "Logo URL": "https://logo.clearbit.com/crayon.co"
+  },
+  "Creatify": {
+    "Company": "Creatify",
+    "tags": ["video", "marketing"],
+    "Free": true,
+    "Website": "https://creatify.ai",
+    "Function / Use": "Short-form Video Ads",
+    "Logo URL": "https://logo.clearbit.com/creatify.ai"
+  },
+  "Gamma": {
+    "Company": "Gamma",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://gamma.app",
+    "Function / Use": "Presentation Generator",
+    "Logo URL": "https://logo.clearbit.com/gamma.app"
+  },
+  "GenSpark": {
+    "Company": "GenSpark",
+    "tags": ["code", "frontend"],
+    "Free": true,
+    "Website": "https://www.genspark.ai",
+    "Function / Use": "App Development AI",
+    "Logo URL": "https://logo.clearbit.com/genspark.ai"
+  },
+  "Replit": {
+    "Company": "Replit",
+    "tags": ["code", "interactive", "backend"],
+    "Free": true,
+    "Website": "https://replit.com",
+    "Function / Use": "Collaborative IDE",
+    "Logo URL": "https://logo.clearbit.com/replit.com"
+  },
+  "v0": {
+    "Company": "Vercel",
+    "tags": ["code", "frontend", "automation"],
+    "Free": true,
+    "Website": "https://v0.dev",
+    "Function / Use": "Build UI with AI",
+    "Logo URL": "https://logo.clearbit.com/vercel.com"
+  },
+  "OLlama": {
+    "Company": "Ollama",
+    "tags": ["code", "chatbot", "backend"],
+    "Free": true,
+    "Website": "https://ollama.com",
+    "Function / Use": "Run LLMs locally",
+    "Logo URL": "https://logo.clearbit.com/ollama.com"
+  },
+  "Cursor": {
+    "Company": "Cursor",
+    "tags": ["code", "frontend", "backend"],
+    "Free": true,
+    "Website": "https://www.cursor.so",
+    "Function / Use": "AI Coding Editor",
+    "Logo URL": "https://logo.clearbit.com/cursor.so"
+  },
+  "Pipedream": {
+    "Company": "Pipedream",
+    "tags": ["code", "automation"],
+    "Free": true,
+    "Website": "https://pipedream.com",
+    "Function / Use": "Workflow Automation",
+    "Logo URL": "https://logo.clearbit.com/pipedream.com"
+  },
+  "Unbounce Smart Copy": {
+    "Company": "Unbounce",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://unbounce.com",
+    "Function / Use": "AI Copywriting Tool",
+    "Logo URL": "https://logo.clearbit.com/unbounce.com"
+  },
+  "MotionFlow AI": {
+    "Company": "MotionFlow",
+    "tags": ["video", "editing"],
+    "Free": true,
+    "Website": "https://motionflow.ai",
+    "Function / Use": "Video Editing AI",
+    "Logo URL": "https://logo.clearbit.com/motionflow.ai"
+  },
+  "Otter": {
+    "Company": "Otter",
+    "tags": ["audio", "voice", "transcribe"],
+    "Free": true,
+    "Website": "https://otter.ai",
+    "Function / Use": "Voice Transcription",
+    "Logo URL": "https://logo.clearbit.com/otter.ai"
+  },
+  "Descript": {
+    "Company": "Descript",
+    "tags": ["audio", "video", "editing", "podcast"],
+    "Free": true,
+    "Website": "https://www.descript.com",
+    "Function / Use": "Audio & Video Editing",
+    "Logo URL": "https://logo.clearbit.com/descript.com"
+  },
+  "Pika Labs": {
+    "Company": "Pika Labs",
+    "tags": ["video", "animation", "generation"],
+    "Free": true,
+    "Website": "https://pika.art",
+    "Function / Use": "Text-to-Video Generator",
+    "Logo URL": "https://logo.clearbit.com/pika.art"
+  },
+  "VideoLeap": {
+    "Company": "Lightricks",
+    "tags": ["video", "editing"],
+    "Free": true,
+    "Website": "https://www.videoleapapp.com",
+    "Function / Use": "Video Editing Suite",
+    "Logo URL": "https://logo.clearbit.com/videoleapapp.com"
+  },
+  "Boom AI": {
+    "Company": "Boom",
+    "tags": ["audio", "music"],
+    "Free": true,
+    "Website": "https://boom.ai",
+    "Function / Use": "AI Audio Creator",
+    "Logo URL": "https://logo.clearbit.com/boom.ai"
+  },
+  "KrispAI": {
+    "Company": "Krisp AI",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://krisp.ai",
+    "Function / Use": "Noise Cancellation",
+    "Logo URL": "https://logo.clearbit.com/krisp.ai"
+  },
+  "Dropcall": {
+    "Company": "Dropcall",
+    "tags": ["audio", "cloning"],
+    "Free": true,
+    "Website": "https://www.dropcall.xyz",
+    "Function / Use": "AI Voice Avatars",
+    "Logo URL": "https://logo.clearbit.com/dropcall.xyz"
+  },
+  "VapiAI": {
+    "Company": "Vapi AI",
+    "tags": ["audio", "chatbot", "voice"],
+    "Free": true,
+    "Website": "https://www.vapi.ai",
+    "Function / Use": "AI Voice Agents",
+    "Logo URL": "https://logo.clearbit.com/vapi.ai"
+  },
+  "RetellAI": {
+    "Company": "Retell AI",
+    "tags": ["audio", "voice", "chatbot"],
+    "Free": true,
+    "Website": "https://www.retellai.com",
+    "Function / Use": "AI Phone Call Agent",
+    "Logo URL": "https://logo.clearbit.com/retellai.com"
+  },
+  "DelphiAI": {
+    "Company": "Delphi AI",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://www.delphi.ai",
+    "Function / Use": "Conversational AI",
+    "Logo URL": "https://logo.clearbit.com/delphi.ai"
+  },
+  "Soundraw": {
+    "Company": "Soundraw",
+    "tags": ["audio", "music"],
+    "Free": true,
+    "Website": "https://soundraw.io",
+    "Function / Use": "AI Music Generator",
+    "Logo URL": "https://logo.clearbit.com/soundraw.io"
+  },
+  "UDIO": {
+    "Company": "Udio",
+    "tags": ["audio", "music"],
+    "Free": true,
+    "Website": "https://www.udio.com",
+    "Function / Use": "AI Music Generator",
+    "Logo URL": "https://logo.clearbit.com/udio.com"
+  },
+  "MurfAI": {
+    "Company": "Murf AI",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://murf.ai",
+    "Function / Use": "Voice Generator",
+    "Logo URL": "https://logo.clearbit.com/murf.ai"
+  },
+  "DeepZen": {
+    "Company": "DeepZen",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://www.deepzen.io",
+    "Function / Use": "AI Voice Narration",
+    "Logo URL": "https://logo.clearbit.com/deepzen.io"
+  },
+  "PodcastCola": {
+    "Company": "Podcast Cola",
+    "tags": ["audio", "podcast"],
+    "Free": true,
+    "Website": "https://podcastcola.com",
+    "Function / Use": "Podcast Production Tool",
+    "Logo URL": "https://logo.clearbit.com/podcastcola.com"
+  },
+  "Copy": {
+    "Company": "Copy",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://www.copy.ai",
+    "Function / Use": "AI Copywriting",
+    "Logo URL": "https://logo.clearbit.com/copy.ai"
+  },
+  "Rewriter": {
+    "Company": "Rewriter",
+    "tags": ["write", "rewrite"],
+    "Free": true,
+    "Website": "https://rewriter.ai",
+    "Function / Use": "Content Rewriting",
+    "Logo URL": "https://logo.clearbit.com/rewriter.ai"
+  },
+  "WriterAI": {
+    "Company": "Writer AI",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://writer.com",
+    "Function / Use": "AI Writing Assistant",
+    "Logo URL": "https://logo.clearbit.com/writer.com"
+  },
+  "Smartwriter": {
+    "Company": "Smartwriter",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://smartwriter.ai",
+    "Function / Use": "AI Email + Copywriter",
+    "Logo URL": "https://logo.clearbit.com/smartwriter.ai"
+  },
+  "Replika": {
+    "Company": "Replika",
+    "tags": ["audio", "avatar", "chatbot"],
+    "Free": false,
+    "Website": "https://replika.com",
+    "Function / Use": "AI Avatar",
+    "Logo URL": "https://logo.clearbit.com/replika.com"
+  },
+  "CopyMonkey": {
+    "Company": "CopyMonkey",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://copymonkey.ai",
+    "Function / Use": "Amazon Copy Generation",
+    "Logo URL": "https://logo.clearbit.com/copymonkey.ai"
+  },
+  "HemingwayAI": {
+    "Company": "Hemingway AI",
+    "tags": ["write", "rewrite"],
+    "Free": true,
+    "Website": "https://hemingwayapp.com",
+    "Function / Use": "Clarity + Readability Editor",
+    "Logo URL": "https://logo.clearbit.com/hemingwayapp.com"
+  },
+  "ReadableAI": {
+    "Company": "Readable AI",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://readable.com",
+    "Function / Use": "Readability Checker",
+    "Logo URL": "https://logo.clearbit.com/readable.com"
+  },
+  "DyslexieFontAI": {
+    "Company": "Dyslexie Font AI",
+    "tags": ["write", "rewrite"],
+    "Free": true,
+    "Website": "https://www.dyslexiefont.com/en/tools",
+    "Function / Use": "Dyslexia-Friendly Font Generator",
+    "Logo URL": "https://logo.clearbit.com/dyslexiefont.com"
+  },
+  "MicrosoftTranslator": {
+    "Company": "Microsoft Translator",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://translator.microsoft.com",
+    "Function / Use": "Multilingual Translation",
+    "Logo URL": "https://logo.clearbit.com/translator.microsoft.com"
+  },
+  "BBCSoundEffects": {
+    "Company": "BBC Sound Effects",
+    "tags": ["audio"],
+    "Free": true,
+    "Website": "https://sound-effects.bbcrewind.co.uk",
+    "Function / Use": "Sound Effect Library",
+    "Logo URL": "https://logo.clearbit.com/bbcrewind.co.uk"
+  },
+  "TranslateAI": {
+    "Company": "Translate AI",
+    "tags": ["audio", "voice"],
+    "Free": true,
+    "Website": "https://translateai.app",
+    "Function / Use": "AI Language Translation",
+    "Logo URL": "https://logo.clearbit.com/translateai.app"
+  },
+  "Beautiful": {
+    "Company": "Beautiful.ai",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://www.beautiful.ai",
+    "Function / Use": "AI Presentation Builder",
+    "Logo URL": "https://logo.clearbit.com/beautiful.ai"
+  },
+  "Tome": {
+    "Company": "Tome",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://tome.app",
+    "Function / Use": "Narrative Presentation Tool",
+    "Logo URL": "https://logo.clearbit.com/tome.app"
+  },
+  "GammaApp": {
+    "Company": "Gamma",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://gamma.app",
+    "Function / Use": "Modern Docs + Slides",
+    "Logo URL": "https://logo.clearbit.com/gamma.app"
+  },
+  "PitchAI": {
+    "Company": "Pitch AI",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://pitch.com",
+    "Function / Use": "AI Pitch Deck Tool",
+    "Logo URL": "https://logo.clearbit.com/pitch.com"
+  },
+  "Slidebean": {
+    "Company": "Slidebean",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://slidebean.com",
+    "Function / Use": "AI Slide Deck Builder",
+    "Logo URL": "https://logo.clearbit.com/slidebean.com"
+  },
+  "Decktopus": {
+    "Company": "Decktopus",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://decktopus.com",
+    "Function / Use": "AI Presentation Generator",
+    "Logo URL": "https://logo.clearbit.com/decktopus.com"
+  },
+  "TomeAI": {
+    "Company": "Tome AI",
+    "tags": ["write", "rewrite"],
+    "Free": true,
+    "Website": "https://tome.app",
+    "Function / Use": "Generative Storytelling Tool",
+    "Logo URL": "https://logo.clearbit.com/tome.app"
+  },
+  "Scribe": {
+    "Company": "Scribe",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://scribehow.com",
+    "Function / Use": "AI Documentation Assistant",
+    "Logo URL": "https://logo.clearbit.com/scribehow.com"
+  },
+  "GammaAI": {
+    "Company": "Gamma AI",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://gamma.app",
+    "Function / Use": "Presentation Assistant",
+    "Logo URL": "https://logo.clearbit.com/gamma.app"
+  },
+  "GitBook": {
+    "Company": "GitBook",
+    "tags": ["code", "backend"],
+    "Free": true,
+    "Website": "https://www.gitbook.com",
+    "Function / Use": "Developer Wiki/Docs Tool",
+    "Logo URL": "https://logo.clearbit.com/gitbook.com"
+  },
+  "ResearchFlow": {
+    "Company": "Research Flow",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://researchflow.ai",
+    "Function / Use": "Research Management Tool",
+    "Logo URL": "https://logo.clearbit.com/researchflow.ai"
+  },
+  "SciSpace": {
+    "Company": "SciSpace",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://scispace.com",
+    "Function / Use": "Scientific Research Assistant",
+    "Logo URL": "https://logo.clearbit.com/scispace.com"
+  },
+  "ElicitAI": {
+    "Company": "Elicit AI",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://elicit.org",
+    "Function / Use": "AI Research Assistant",
+    "Logo URL": "https://logo.clearbit.com/elicit.org"
+  },
+  "CrayonAI": {
+    "Company": "Crayon AI",
+    "tags": ["write", "marketing"],
+    "Free": true,
+    "Website": "https://crayon.ai",
+    "Function / Use": "Marketing Intel Tool",
+    "Logo URL": "https://logo.clearbit.com/crayon.ai"
+  },
+  "Glimpse": {
+    "Company": "Glimpse",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://meetglimpse.com",
+    "Function / Use": "Trend Research Tool",
+    "Logo URL": "https://logo.clearbit.com/meetglimpse.com"
+  },
+  "GroundNews": {
+    "Company": "Ground News",
+    "tags": ["write", "analysis"],
+    "Free": true,
+    "Website": "https://ground.news",
+    "Function / Use": "News Bias Detection Tool",
+    "Logo URL": "https://logo.clearbit.com/ground.news"
+  },
+  "Pattern89": {
+  "Company": "Pattern89",
+  "tags": ["write", "marketing"],
+  "Free": true,
+  "Website": "https://pattern89.com",
+  "Function / Use": "Creative Pattern Analysis",
+  "Logo URL": "https://logo.clearbit.com/pattern89.com"
+},
+"SparkToro": {
+  "Company": "SparkToro",
+  "tags": ["write", "marketing"],
+  "Free": true,
+  "Website": "https://sparktoro.com",
+  "Function / Use": "Audience Research Tool",
+  "Logo URL": "https://logo.clearbit.com/sparktoro.com"
+  }
+}

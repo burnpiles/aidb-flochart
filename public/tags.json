@@ -1,0 +1,39 @@
+{
+  "audio": [
+    "voice",
+    "music",
+    "cloning",
+    "podcast",
+    "transcribe"
+  ],
+  "video": [
+    "generation",
+    "animation",
+    "editing",
+    "avatar",
+    "analysis"
+  ],
+  "images": [
+    "realistic",
+    "artistic",
+    "avatar",
+    "design",
+    "retouch"
+  ],
+  "code": [
+    "frontend",
+    "backend",
+    "automation",
+    "chatbot",
+    "interactive"
+  ],
+  "write": [
+    "stories",
+    "dialogue",
+    "analysis",
+    "rewrite",
+    "marketing"
+  ],
+  "assistants": [],
+  "featured": []
+}

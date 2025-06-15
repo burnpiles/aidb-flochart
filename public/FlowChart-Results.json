@@ -1,0 +1,2394 @@
+{
+  "music video": [
+    {
+      "title": "Music Video",
+      "tags": [
+        "audio",
+        "video",
+        "music",
+        "video editing"
+      ],
+      "description": "Produce a full music video from text, audio, images, and final video.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "text",
+          "output": "lyrics",
+          "tools": [
+            "GitBook",
+            "Pika Labs",
+            "Tripo3D",
+            "Kling"
+          ],
+          "default": "GitBook",
+          "purpose": "ideas / lyrics"
+        },
+        {
+          "input": "lyrics",
+          "output": "audio",
+          "tools": [
+            "Adobe Firefly",
+            "Replika",
+            "Descript",
+            "Pika Labs",
+            "ElevenLabs",
+            "Dream Machine",
+            "Otter",
+            "Boom AI",
+            "KrispAI",
+            "Dropcall",
+            "VapiAI",
+            "RetellAI",
+            "DelphiAI",
+            "Soundraw",
+            "UDIO",
+            "MurfAI",
+            "DeepZen",
+            "PodcastCola",
+            "MicrosoftTranslator",
+            "BBCSoundEffects",
+            "TranslateAI"
+          ],
+          "default": "Adobe Firefly",
+          "purpose": "audio generation"
+        },
+        {
+          "input": "audio",
+          "output": "text",
+          "tools": [
+            "Descript",
+            "Pika Labs",
+            "Tripo3D",
+            "Kling",
+            "Boom AI"
+          ],
+          "default": null,
+          "purpose": "analyze song"
+        },
+        {
+          "input": "text",
+          "output": "images",
+          "tools": [
+            "Adobe Firefly",
+            "Midjourney",
+            "DALL-E (OpenAI)",
+            "Pika Labs",
+            "Tripo3D",
+            "Dream Machine",
+            "Kling"
+          ],
+          "default": "CopyMonkey",
+          "purpose": "image generation"
+        },
+        {
+          "input": "images",
+          "output": "video",
+          "tools": [
+            "CapCut",
+            "Leonardo.ai",
+            "Runway ML",
+            "Descript",
+            "Synthesia",
+            "HeyGen",
+            "Pika Labs",
+            "Stable Diffusion",
+            "DeepMotion",
+            "Luma AI",
+            "Dream Machine",
+            "DaVinci Resolve AI",
+            "Kling",
+            "Veed",
+            "Wisecut",
+            "Make Klips",
+            "Stormgenie",
+            "Magic Hour",
+            "Freepix AI Video",
+            "Creatify",
+            "MotionFlow AI",
+            "VideoLeap"
+          ],
+          "default": "CapCut",
+          "purpose": "video editing"
+        }
+      ]
+    }
+  ],
+  "sound fx generator": [
+    {
+      "title": "Videogame Sound Effects",
+      "tags": [
+        "audio",
+        "sound fx"
+      ],
+      "description": "Generate dynamic sound effects from text concept to refined game-ready audio.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "text",
+          "output": "effect idea",
+          "tools": [
+            "BBCSoundEffects",
+            "Pika Labs",
+            "Tripo3D",
+            "Kling"
+          ],
+          "default": "BBCSoundEffects",
+          "purpose": "describe what sound should be"
+        },
+        {
+          "input": "effect idea",
+          "output": "raw fx",
+          "tools": [
+            "BBCSoundEffects"
+          ],
+          "default": "Dream Machine",
+          "purpose": "generate base sound"
+        },
+        {
+          "input": "raw fx",
+          "output": "polished fx",
+          "tools": [
+            "BBCSoundEffects",
+            "Boom AI",
+            "CapCut",
+            "DaVinci Resolve AI",
+            "DeepZen",
+            "DelphiAI",
+            "Descript",
+            "Dropcall",
+            "ElevenLabs",
+            "KrispAI",
+            "Make Klips",
+            "MicrosoftTranslator",
+            "MotionFlow AI",
+            "MurfAI",
+            "Otter",
+            "PodcastCola",
+            "Replika",
+            "RetellAI",
+            "Runway ML",
+            "Soundraw",
+            "TranslateAI",
+            "UDIO",
+            "VapiAI",
+            "Veed",
+            "VideoLeap",
+            "Wisecut"
+          ],
+          "default": null,
+          "purpose": "refine, clean, export"
+        }
+      ]
+    }
+  ],
+  "explainer animation": [
+    {
+      "title": "Explainer Animation",
+      "tags": [
+        "video",
+        "animation"
+      ],
+      "description": "Create an engaging explainer animation from concept, script, illustrations, and final animated sequence.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "concept",
+          "output": "script",
+          "tools": [
+            "Adobe Firefly",
+            "Vizcom",
+            "Otter"
+          ],
+          "default": "Adobe Firefly",
+          "purpose": "explain concept in simple terms"
+        },
+        {
+          "input": "script",
+          "output": "illustrations",
+          "tools": [
+            "Dream Machine",
+            "Otter"
+          ],
+          "default": "Dream Machine",
+          "purpose": "generate visuals"
+        },
+        {
+          "input": "illustrations",
+          "output": "animation",
+          "tools": [
+            "CapCut",
+            "Runway ML",
+            "Synthesia",
+            "HeyGen",
+            "Pika Labs",
+            "DeepMotion",
+            "Dream Machine",
+            "Kling",
+            "Magic Hour",
+            "Freepix AI Video"
+          ],
+          "default": "Beautiful",
+          "purpose": "create explainer animation"
+        }
+      ]
+    }
+  ],
+  "product demo video": [
+    {
+      "title": "Product Demo Video",
+      "tags": [
+        "video",
+        "live action"
+      ],
+      "description": "Produce a live-action demo video featuring script writing, avatar, screen capture, and final assembly.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "script",
+          "tools": [
+            "Otter",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Perplexity AI",
+            "Gemini (Google)",
+            "DeepL",
+            "Jasper",
+            "Copy.ai",
+            "Anyword",
+            "Lately AI",
+            "Crayo",
+            "Crayon AI",
+            "Gamma",
+            "Unbounce Smart Copy",
+            "Copy",
+            "Rewriter",
+            "WriterAI",
+            "Smartwriter",
+            "CopyMonkey",
+            "HemingwayAI",
+            "ReadableAI",
+            "DyslexieFontAI",
+            "Beautiful",
+            "Tome",
+            "GammaApp",
+            "PitchAI",
+            "Slidebean",
+            "Decktopus",
+            "TomeAI",
+            "Scribe",
+            "GammaAI",
+            "ResearchFlow",
+            "SciSpace",
+            "ElicitAI",
+            "CrayonAI",
+            "Glimpse",
+            "GroundNews",
+            "Pattern89",
+            "SparkToro"
+          ],
+          "default": "Otter",
+          "purpose": "write demo script"
+        },
+        {
+          "input": "script",
+          "output": "avatar",
+          "tools": [
+            "Dream Machine",
+            "Replika",
+            "Synthesia",
+            "Canva AI",
+            "HeyGen",
+            "MetaHuman Creator",
+            "Kling",
+            "Magic Hour",
+            "Otter",
+            "Dropcall"
+          ],
+          "default": "Dream Machine",
+          "purpose": "generate presenter avatar"
+        },
+        {
+          "input": "demo",
+          "output": "screen recording",
+          "tools": [
+            "DeepMotion"
+          ],
+          "default": "DeepMotion",
+          "purpose": "capture demo"
+        },
+        {
+          "input": "avatar + screen",
+          "output": "video",
+          "tools": [
+            "Leonardo.ai",
+            "Runway ML",
+            "Descript",
+            "Synthesia",
+            "HeyGen",
+            "Pika Labs",
+            "Stable Diffusion",
+            "Luma AI",
+            "Dream Machine",
+            "CapCut",
+            "DaVinci Resolve AI",
+            "Kling",
+            "Veed",
+            "Wisecut",
+            "Make Klips",
+            "Stormgenie",
+            "Magic Hour",
+            "Freepix AI Video",
+            "Creatify",
+            "MotionFlow AI",
+            "VideoLeap"
+          ],
+          "default": null,
+          "purpose": "assemble final demo"
+        }
+      ]
+    }
+  ],
+  "resume to portfolio": [
+    {
+      "title": "Resume to Portfolio Page",
+      "tags": [
+        "write",
+        "blogs / ad copy"
+      ],
+      "description": "Transform your resume into a polished portfolio page with summarized bios, layout, and design.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "resume",
+          "output": "summary",
+          "tools": [],
+          "default": null,
+          "purpose": "summarize into bios/skills"
+        },
+        {
+          "input": "summary",
+          "output": "page layout",
+          "tools": [],
+          "default": null,
+          "purpose": "visual formatting"
+        },
+        {
+          "input": "layout",
+          "output": "design",
+          "tools": [
+            "Beautiful",
+            "Midjourney",
+            "Leonardo.ai",
+            "DALL-E (OpenAI)",
+            "Figma AI",
+            "Canva AI",
+            "Adobe Firefly",
+            "Stable Diffusion",
+            "Krea.ai",
+            "Uizard",
+            "Figmadesign",
+            "Magician",
+            "Spline",
+            "Kaedim",
+            "Tripo3D",
+            "Meshy.ai",
+            "Luma AI",
+            "Vizcom",
+            "MetaHuman Creator",
+            "RunwayML (Image)"
+          ],
+          "default": "Beautiful",
+          "purpose": "artistic presentation"
+        }
+      ]
+    }
+  ],
+  "meeting summary slides": [
+    {
+      "title": "Meeting Summary with Slides",
+      "tags": [
+        "write",
+        "blogs / ad copy"
+      ],
+      "description": "Generate meeting slides from recorded audio, summarizing transcripts, and creating visual presentations.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "audio",
+          "output": "transcript",
+          "tools": [
+            "Descript",
+            "Otter",
+            "Boom AI"
+          ],
+          "default": null,
+          "purpose": "transcribe discussion"
+        },
+        {
+          "input": "transcript",
+          "output": "summary",
+          "tools": [
+            "CapCut",
+            "Copy.ai",
+            "DaVinci Resolve AI",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Perplexity AI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "TomeAI",
+            "Veed",
+            "Wisecut"
+          ],
+          "default": null,
+          "purpose": "create key takeaways"
+        },
+        {
+          "input": "summary",
+          "output": "slides",
+          "tools": [
+            "GammaApp"
+          ],
+          "default": "GammaApp",
+          "purpose": "visual slide creation"
+        }
+      ]
+    }
+  ],
+  "social ad generator": [
+    {
+      "title": "Social Ad Generator",
+      "tags": [
+        "video",
+        "trailers / shorts",
+        "blogs / ad copy"
+      ],
+      "description": "Convert textual ad descriptions into short video ads with images, voice, and final compilation.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "description",
+          "output": "ad copy",
+          "tools": [
+            "Anyword",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Perplexity AI",
+            "Gemini (Google)",
+            "Jasper",
+            "Copy.ai",
+            "Lately AI",
+            "Crayo",
+            "Crayon AI",
+            "Creatify",
+            "Gamma",
+            "Unbounce Smart Copy",
+            "Copy",
+            "WriterAI",
+            "Smartwriter",
+            "CopyMonkey",
+            "Beautiful",
+            "Tome",
+            "GammaApp",
+            "PitchAI",
+            "Slidebean",
+            "Decktopus",
+            "GammaAI",
+            "CrayonAI",
+            "Pattern89",
+            "SparkToro"
+          ],
+          "default": "Anyword",
+          "purpose": "generate marketing copy"
+        },
+        {
+          "input": "ad copy",
+          "output": "images",
+          "tools": [
+            "Vizcom"
+          ],
+          "default": "Vizcom",
+          "purpose": "visual concepts"
+        },
+        {
+          "input": "images",
+          "output": "voice",
+          "tools": [
+            "Creatify",
+            "ElevenLabs",
+            "Otter",
+            "KrispAI",
+            "Dropcall",
+            "VapiAI",
+            "RetellAI",
+            "DelphiAI",
+            "MurfAI",
+            "DeepZen",
+            "MicrosoftTranslator",
+            "TranslateAI"
+          ],
+          "default": "Creatify",
+          "purpose": "voice for ad"
+        },
+        {
+          "input": "voice + visuals",
+          "output": "video",
+          "tools": [
+            "Creatify",
+            "Leonardo.ai",
+            "Runway ML",
+            "Descript",
+            "Synthesia",
+            "HeyGen",
+            "Pika Labs",
+            "Stable Diffusion",
+            "Luma AI",
+            "Dream Machine",
+            "CapCut",
+            "DaVinci Resolve AI",
+            "Kling",
+            "Veed",
+            "Wisecut",
+            "Make Klips",
+            "Stormgenie",
+            "Magic Hour",
+            "Freepix AI Video",
+            "MotionFlow AI",
+            "VideoLeap"
+          ],
+          "default": "DaVinci Resolve AI",
+          "purpose": "compile short ad"
+        }
+      ]
+    }
+  ],
+  "startup pitch generator": [
+    {
+      "title": "Startup Pitch Generator",
+      "tags": [
+        "write",
+        "screenplays",
+        "blogs / ad copy"
+      ],
+      "description": "Develop a pitch script, slides, voice narration, and final video for a compelling startup presentation.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "script",
+          "tools": [
+            "Dream Machine",
+            "Otter"
+          ],
+          "default": "Dream Machine",
+          "purpose": "generate core pitch script"
+        },
+        {
+          "input": "script",
+          "output": "slides",
+          "tools": [
+            "GammaApp",
+            "Otter"
+          ],
+          "default": "GammaApp",
+          "purpose": "visual slide creation"
+        },
+        {
+          "input": "script",
+          "output": "voice",
+          "tools": [
+            "DeepZen",
+            "ElevenLabs",
+            "Otter",
+            "KrispAI",
+            "Dropcall",
+            "VapiAI",
+            "RetellAI",
+            "DelphiAI",
+            "MurfAI",
+            "MicrosoftTranslator",
+            "TranslateAI"
+          ],
+          "default": "DeepZen",
+          "purpose": "narration voiceover"
+        },
+        {
+          "input": "slides + voice",
+          "output": "video",
+          "tools": [
+            "CapCut",
+            "Leonardo.ai",
+            "Runway ML",
+            "Descript",
+            "Synthesia",
+            "HeyGen",
+            "Pika Labs",
+            "Stable Diffusion",
+            "DeepMotion",
+            "Luma AI",
+            "Dream Machine",
+            "DaVinci Resolve AI",
+            "Kling",
+            "Veed",
+            "Wisecut",
+            "Make Klips",
+            "Stormgenie",
+            "Magic Hour",
+            "Freepix AI Video",
+            "Creatify",
+            "MotionFlow AI",
+            "VideoLeap"
+          ],
+          "default": "CapCut",
+          "purpose": "assemble pitch video"
+        }
+      ]
+    }
+  ],
+  "album art from lyrics": [
+    {
+      "title": "Music Album Art",
+      "tags": [
+        "audio",
+        "images",
+        "product mockups",
+        "social thumbnails",
+        "music"
+      ],
+      "description": "Turn lyrics into stunning album art by interpreting mood, generating cover, and refining style.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "lyrics",
+          "output": "mood",
+          "tools": [
+            "DeepZen",
+            "DelphiAI",
+            "ElevenLabs",
+            "KrispAI",
+            "MicrosoftTranslator",
+            "MurfAI",
+            "Otter",
+            "RetellAI",
+            "TranslateAI",
+            "VapiAI"
+          ],
+          "default": null,
+          "purpose": "interpret tone"
+        },
+        {
+          "input": "mood",
+          "output": "art",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "default": null,
+          "purpose": "create cover"
+        },
+        {
+          "input": "art",
+          "output": "final",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "default": null,
+          "purpose": "refine style"
+        }
+      ]
+    }
+  ],
+  "ai meme generator": [
+    {
+      "title": "Quick AI Meme Generator",
+      "tags": [
+        "images",
+        "jokes / humor",
+        "social thumbnails"
+      ],
+      "description": "Quickly build memes from a funny caption, generated images, and final overlay with AI tools.",
+      "youtube": "https://www.youtube.com/watch?v=aKq8bkY5eTU&pp=ygUHbXJiZWFzdA%3D%3D",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "prompt",
+          "tools": [
+            "Dream Machine"
+          ],
+          "default": "Dream Machine",
+          "purpose": "generate funny caption"
+        },
+        {
+          "input": "prompt",
+          "output": "image",
+          "tools": [
+            "Midjourney",
+            "Leonardo.ai",
+            "DALL-E (OpenAI)",
+            "Adobe Firefly",
+            "Stable Diffusion",
+            "RunwayML (Image)"
+          ],
+          "default": null,
+          "purpose": "render meme frame"
+        },
+        {
+          "input": "image",
+          "output": "meme",
+          "tools": [
+            "Midjourney",
+            "Leonardo.ai",
+            "DALL-E (OpenAI)",
+            "Adobe Firefly",
+            "Stable Diffusion",
+            "RunwayML (Image)"
+          ],
+          "default": null,
+          "purpose": "overlay caption"
+        }
+      ]
+    }
+  ],
+  "podcast episode generator": [
+    {
+      "title": "Podcast Episode",
+      "tags": [
+        "audio",
+        "podcast",
+        "write"
+      ],
+      "description": "Generate a podcast episode from idea to publication using AI tools.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "script",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Gemini (Google)",
+            "Copy",
+            "WriterAI"
+          ],
+          "purpose": "generate episode script"
+        },
+        {
+          "input": "script",
+          "output": "voice",
+          "tools": [
+            "ElevenLabs",
+            "MurfAI",
+            "DeepZen",
+            "Soundraw"
+          ],
+          "purpose": "voice generation"
+        },
+        {
+          "input": "voice",
+          "output": "edited audio",
+          "tools": [
+            "Descript",
+            "Wisecut",
+            "KrispAI"
+          ],
+          "purpose": "edit and clean audio"
+        },
+        {
+          "input": "edited audio",
+          "output": "published podcast",
+          "tools": [
+            "PodcastCola",
+            "Otter"
+          ],
+          "purpose": "publish or distribute"
+        }
+      ]
+    }
+  ],
+  "youtube script to thumbnail": [
+    {
+      "title": "YouTube Script to Thumbnail",
+      "tags": [
+        "images",
+        "video",
+        "write"
+      ],
+      "description": "Generate a YouTube video thumbnail starting from the script.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "script",
+          "output": "key frame idea",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Gemini (Google)"
+          ],
+          "purpose": "suggest key visual idea"
+        },
+        {
+          "input": "key frame idea",
+          "output": "image",
+          "tools": [
+            "Midjourney",
+            "DALL-E (OpenAI)",
+            "Krea.ai"
+          ],
+          "purpose": "generate key visual"
+        },
+        {
+          "input": "image",
+          "output": "thumbnail",
+          "tools": [
+            "Canva AI",
+            "Figma AI",
+            "Descript"
+          ],
+          "purpose": "add text and design for thumbnail"
+        }
+      ]
+    }
+  ],
+  "ai website from prompt": [
+    {
+      "title": "Website from Prompt",
+      "tags": [
+        "code",
+        "frontend",
+        "write"
+      ],
+      "description": "Build a functional website from a simple text prompt.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "prompt",
+          "output": "layout",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Gemini (Google)",
+            "Framer"
+          ],
+          "purpose": "convert idea to structure"
+        },
+        {
+          "input": "layout",
+          "output": "components",
+          "tools": [
+            "v0",
+            "Figma AI",
+            "Relume",
+            "GenSpark"
+          ],
+          "purpose": "generate components/UI"
+        },
+        {
+          "input": "components",
+          "output": "published website",
+          "tools": [
+            "Replit",
+            "Framer",
+            "Relume"
+          ],
+          "purpose": "deploy site"
+        }
+      ]
+    }
+  ],
+  "product photo generator": [
+    {
+      "title": "Product Photo",
+      "tags": [
+        "images",
+        "realistic",
+        "retouch"
+      ],
+      "description": "Turn a product description into studio-quality mockups and photos.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "product description",
+          "output": "mockup",
+          "tools": [
+            "Midjourney",
+            "DALL-E (OpenAI)",
+            "Krea.ai"
+          ],
+          "purpose": "generate product visuals"
+        },
+        {
+          "input": "mockup",
+          "output": "background swap",
+          "tools": [
+            "Canva AI",
+            "RunwayML (Image)"
+          ],
+          "purpose": "adjust setting/environment"
+        },
+        {
+          "input": "background swap",
+          "output": "final photo",
+          "tools": [
+            "RunwayML (Image)",
+            "Photoshop AI"
+          ],
+          "purpose": "refine and export"
+        }
+      ]
+    }
+  ],
+  "short film storyboard": [
+    {
+      "title": "Short Film Storyboard",
+      "tags": [
+        "write",
+        "images",
+        "video"
+      ],
+      "description": "Create a storyboard for a short film using AI for writing and illustration.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "script",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Gemini (Google)",
+            "WriterAI"
+          ],
+          "purpose": "write film script"
+        },
+        {
+          "input": "script",
+          "output": "visuals",
+          "tools": [
+            "DALL-E (OpenAI)",
+            "Midjourney",
+            "Vizcom",
+            "Krea.ai"
+          ],
+          "purpose": "generate scenes"
+        },
+        {
+          "input": "visuals",
+          "output": "storyboard",
+          "tools": [
+            "Figma AI",
+            "Canva AI"
+          ],
+          "purpose": "compile sequence layout"
+        }
+      ]
+    }
+  ],
+  "blog to voiceover": [
+    {
+      "title": "Blog to Voiceover",
+      "tags": [
+        "write",
+        "audio",
+        "transcribe"
+      ],
+      "description": "Convert blog content into an audio voiceover or podcast format.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "blog",
+          "output": "clean script",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Rewriter",
+            "Copy"
+          ],
+          "purpose": "clean text for voice"
+        },
+        {
+          "input": "script",
+          "output": "voiceover",
+          "tools": [
+            "MurfAI",
+            "ElevenLabs",
+            "DeepZen",
+            "Soundraw"
+          ],
+          "purpose": "generate voice"
+        },
+        {
+          "input": "voiceover",
+          "output": "final audio",
+          "tools": [
+            "Descript",
+            "Wisecut"
+          ],
+          "purpose": "edit and polish"
+        }
+      ]
+    }
+  ],
+  "ai slide deck builder": [
+    {
+      "title": "Slide / Deck Builder",
+      "tags": [
+        "write",
+        "images"
+      ],
+      "description": "Make slide decks from notes or bullets using presentation AI tools.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "outline",
+          "output": "slides",
+          "tools": [
+            "Gamma",
+            "Tome",
+            "PitchAI",
+            "Beautiful"
+          ],
+          "purpose": "generate slides"
+        },
+        {
+          "input": "slides",
+          "output": "illustrations",
+          "tools": [
+            "Midjourney",
+            "DALL-E (OpenAI)",
+            "Krea.ai"
+          ],
+          "purpose": "add supporting visuals"
+        },
+        {
+          "input": "slides + visuals",
+          "output": "presentation",
+          "tools": [
+            "Canva AI",
+            "Figma AI"
+          ],
+          "purpose": "design and finalize"
+        }
+      ]
+    }
+  ],
+  "startup landing page": [
+    {
+      "title": "Startup Landing Page",
+      "tags": [
+        "code",
+        "write",
+        "images"
+      ],
+      "description": "Build a launch-ready landing page with AI help from writing to code.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "product idea",
+          "output": "copy",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Copy.ai",
+            "Jasper",
+            "Claude (Anthropic)"
+          ],
+          "purpose": "write marketing text"
+        },
+        {
+          "input": "copy",
+          "output": "layout",
+          "tools": [
+            "Framer",
+            "Relume",
+            "v0",
+            "Figma AI"
+          ],
+          "purpose": "design website"
+        },
+        {
+          "input": "layout",
+          "output": "deployed site",
+          "tools": [
+            "Replit",
+            "GenSpark",
+            "Framer"
+          ],
+          "purpose": "launch page"
+        }
+      ]
+    }
+  ],
+  "ai avatar commercial": [
+    {
+      "title": "AI Avatar Commercial",
+      "tags": [
+        "video",
+        "avatar",
+        "audio"
+      ],
+      "description": "Create a video ad using an avatar and synthesized voice.",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "script",
+          "output": "voice",
+          "tools": [
+            "ElevenLabs",
+            "MurfAI",
+            "Soundraw"
+          ],
+          "purpose": "generate narration"
+        },
+        {
+          "input": "voice",
+          "output": "avatar",
+          "tools": [
+            "Synthesia",
+            "HeyGen",
+            "Magic Hour"
+          ],
+          "purpose": "generate presenter"
+        },
+        {
+          "input": "avatar",
+          "output": "final video",
+          "tools": [
+            "Runway ML",
+            "Descript",
+            "CapCut"
+          ],
+          "purpose": "edit and compile"
+        }
+      ]
+    }
+  ],
+  "AI Comic Generator": [
+    {
+      "title": "Comic Generator",
+      "tags": [
+        "design",
+        "images",
+        "write",
+        "code",
+        "frontend",
+        "stories",
+        "artistic",
+        "dialogue"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "story prompt",
+          "output": "script",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "generate comic storyline"
+        },
+        {
+          "input": "script",
+          "output": "panels",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "create comic visuals"
+        },
+        {
+          "input": "panels",
+          "output": "layout",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "assemble into comic layout"
+        }
+      ]
+    }
+  ],
+  "Resume to LinkedIn Rewrite": [
+    {
+      "title": "Resume to LinkedIn Rewrite",
+      "tags": [
+        "write",
+        "marketing",
+        "rewrite"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "resume",
+          "output": "summary",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "summarize resume"
+        },
+        {
+          "input": "summary",
+          "output": "linkedin bio",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Creatify",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "optimize for LinkedIn"
+        }
+      ]
+    }
+  ],
+  "AI Children\u2019s Book Creator": [
+    {
+      "title": "Children\u2019s Book Creator",
+      "tags": [
+        "images",
+        "write",
+        "code",
+        "frontend",
+        "artistic",
+        "stories"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "idea",
+          "output": "story",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "generate children\u2019s story"
+        },
+        {
+          "input": "story",
+          "output": "illustrations",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "illustrate the story"
+        },
+        {
+          "input": "story + illustrations",
+          "output": "book layout",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "assemble book"
+        }
+      ]
+    }
+  ],
+  "Logo + Brand Kit Generator": [
+    {
+      "title": "Logo + Brand Kit Generator",
+      "tags": [
+        "design",
+        "images"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "brand name",
+          "output": "logo",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "generate logo"
+        },
+        {
+          "input": "logo",
+          "output": "brand kit",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "generate colors, typography"
+        }
+      ]
+    }
+  ],
+  "Multilingual Website Translator": [
+    {
+      "title": "Multilingual Website Translator",
+      "tags": [
+        "transcribe",
+        "code",
+        "frontend",
+        "audio"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "website copy",
+          "output": "translated copy",
+          "tools": [
+            "BBCSoundEffects",
+            "Boom AI",
+            "DeepZen",
+            "DelphiAI",
+            "Descript",
+            "Dropcall",
+            "ElevenLabs",
+            "KrispAI",
+            "MicrosoftTranslator",
+            "MurfAI",
+            "Otter",
+            "PodcastCola",
+            "Replika",
+            "RetellAI",
+            "Soundraw",
+            "TranslateAI",
+            "UDIO",
+            "VapiAI"
+          ],
+          "purpose": "translate text"
+        },
+        {
+          "input": "translated copy",
+          "output": "localized site",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "render translated content"
+        }
+      ]
+    }
+  ],
+  "Ad Campaign Brainstorming Flow": [
+    {
+      "title": "Ad Campaign Brainstorming Flow",
+      "tags": [
+        "design",
+        "images",
+        "write",
+        "marketing"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "product",
+          "output": "ideas",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Creatify",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "generate campaign concepts"
+        },
+        {
+          "input": "ideas",
+          "output": "ads",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "create visuals for ads"
+        },
+        {
+          "input": "ads",
+          "output": "copy",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Creatify",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "write captions + taglines"
+        }
+      ]
+    }
+  ],
+  "3D Product Mockup Builder": [
+    {
+      "title": "3D Product Mockup Builder",
+      "tags": [
+        "design",
+        "images",
+        "realistic"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "product concept",
+          "output": "3D model",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "generate mockup"
+        },
+        {
+          "input": "3D model",
+          "output": "mockup image",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "render product image"
+        }
+      ]
+    }
+  ],
+  "Fashion Lookbook Generator": [
+    {
+      "title": "Fashion Lookbook Generator",
+      "tags": [
+        "design",
+        "images",
+        "retouch"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "style prompt",
+          "output": "outfits",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "generate fashion pieces"
+        },
+        {
+          "input": "outfits",
+          "output": "lookbook",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "compile into showcase"
+        }
+      ]
+    }
+  ],
+  "AI Book Summary Video": [
+    {
+      "title": "Book Summary Video",
+      "tags": [
+        "design",
+        "images",
+        "write",
+        "analysis",
+        "video",
+        "editing"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "book text",
+          "output": "summary",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "CapCut",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "DaVinci Resolve AI",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "Veed",
+            "Wisecut",
+            "WriterAI"
+          ],
+          "purpose": "summarize book"
+        },
+        {
+          "input": "summary",
+          "output": "slides",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "visualize summary"
+        },
+        {
+          "input": "slides",
+          "output": "video",
+          "tools": [
+            "CapCut",
+            "Creatify",
+            "DaVinci Resolve AI",
+            "DeepMotion",
+            "Descript",
+            "Dream Machine",
+            "Freepix AI Video",
+            "HeyGen",
+            "Kling",
+            "Leonardo.ai",
+            "Magic Hour",
+            "Make Klips",
+            "MotionFlow AI",
+            "Pika Labs",
+            "Runway ML",
+            "Stormgenie",
+            "Synthesia",
+            "Veed",
+            "VideoLeap",
+            "Wisecut"
+          ],
+          "purpose": "convert slides into video"
+        }
+      ]
+    }
+  ],
+  "Interactive Fiction Game Engine": [
+    {
+      "title": "Interactive Fiction Game Engine",
+      "tags": [
+        "images",
+        "write",
+        "code",
+        "interactive",
+        "artistic",
+        "dialogue"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "plot idea",
+          "output": "branches",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "generate story paths"
+        },
+        {
+          "input": "branches",
+          "output": "scenes",
+          "tools": [
+            "Adobe Firefly",
+            "Canva AI",
+            "DALL-E (OpenAI)",
+            "DeepFont",
+            "Figma AI",
+            "Figmadesign",
+            "Fontjoy",
+            "Kaedim",
+            "Krea.ai",
+            "Leonardo.ai",
+            "Luma AI",
+            "Magician",
+            "Meshy.ai",
+            "MetaHuman Creator",
+            "Midjourney",
+            "RunwayML (Image)",
+            "Spline",
+            "Stable Diffusion",
+            "Tripo3D",
+            "Uizard",
+            "Vizcom"
+          ],
+          "purpose": "create scene illustrations"
+        },
+        {
+          "input": "scenes + story",
+          "output": "interactive app",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "build interactive game"
+        }
+      ]
+    }
+  ],
+  "Customer Support Chatbot": [
+    {
+      "title": "Customer Support Chatbot",
+      "tags": [
+        "automation",
+        "code",
+        "chatbot"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "faq",
+          "output": "chat logic",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replika",
+            "Replit",
+            "RetellAI",
+            "VapiAI",
+            "v0"
+          ],
+          "purpose": "generate conversation logic"
+        },
+        {
+          "input": "chat logic",
+          "output": "chatbot",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "deploy chatbot"
+        }
+      ]
+    }
+  ],
+  "E-commerce Product Page Builder": [
+    {
+      "title": "E-commerce Product Page Builder",
+      "tags": [
+        "code",
+        "write",
+        "marketing",
+        "frontend"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "product",
+          "output": "description",
+          "tools": [
+            "Anyword",
+            "Beautiful",
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Copy",
+            "Copy.ai",
+            "CopyMonkey",
+            "Crayo",
+            "Crayon AI",
+            "CrayonAI",
+            "Creatify",
+            "Decktopus",
+            "DeepL",
+            "DyslexieFontAI",
+            "ElicitAI",
+            "Gamma",
+            "GammaAI",
+            "GammaApp",
+            "Gemini (Google)",
+            "Glimpse",
+            "GroundNews",
+            "HemingwayAI",
+            "Jasper",
+            "Lately AI",
+            "Pattern89",
+            "Perplexity AI",
+            "PitchAI",
+            "ReadableAI",
+            "ResearchFlow",
+            "Rewriter",
+            "SciSpace",
+            "Scribe",
+            "Slidebean",
+            "Smartwriter",
+            "SparkToro",
+            "Tome",
+            "TomeAI",
+            "Unbounce Smart Copy",
+            "WriterAI"
+          ],
+          "purpose": "write copy"
+        },
+        {
+          "input": "description",
+          "output": "page layout",
+          "tools": [
+            "ChatGPT (OpenAI)",
+            "Claude (Anthropic)",
+            "Cursor",
+            "Framer",
+            "Gemini (Google)",
+            "GenSpark",
+            "GitBook",
+            "GitHub Copilot",
+            "Hotjar AI",
+            "Maze AI",
+            "OLlama",
+            "Optimizely AI",
+            "Pipedream",
+            "Relume",
+            "Replit",
+            "v0"
+          ],
+          "purpose": "create product page"
+        }
+      ]
+    }
+  ],
+  "Voice Cloning from Script": [
+    {
+      "title": "Voice Cloning from Script",
+      "tags": [
+        "transcribe",
+        "audio",
+        "cloning"
+      ],
+      "description": "",
+      "youtube": "",
+      "steps": [
+        {
+          "input": "script",
+          "output": "voice",
+          "tools": [
+            "BBCSoundEffects",
+            "Boom AI",
+            "DeepZen",
+            "DelphiAI",
+            "Descript",
+            "Dropcall",
+            "ElevenLabs",
+            "KrispAI",
+            "MicrosoftTranslator",
+            "MurfAI",
+            "Otter",
+            "PodcastCola",
+            "Replika",
+            "RetellAI",
+            "Soundraw",
+            "TranslateAI",
+            "UDIO",
+            "VapiAI"
+          ],
+          "purpose": "generate custom voice"
+        },
+        {
+          "input": "voice",
+          "output": "refined audio",
+          "tools": [
+            "BBCSoundEffects",
+            "Boom AI",
+            "DeepZen",
+            "DelphiAI",
+            "Descript",
+            "Dropcall",
+            "ElevenLabs",
+            "KrispAI",
+            "MicrosoftTranslator",
+            "MurfAI",
+            "Otter",
+            "PodcastCola",
+            "Replika",
+            "RetellAI",
+            "Soundraw",
+            "TranslateAI",
+            "UDIO",
+            "VapiAI"
+          ],
+          "purpose": "clean and finalize"
+        }
+      ]
+    }
+  ]
+}

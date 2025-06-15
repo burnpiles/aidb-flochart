@@ -1,0 +1,150 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #f9f9fb;
+  color: #222;
+}
+
+iframe[style*="z-index: 2147483647"] {
+  display: none !important;
+}
+
+/* Node Container Overrides */
+.react-flow__node-default {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* For ephemeral lines: dashed animation, etc. */
+@keyframes dashAnimation {
+  to {
+    stroke-dashoffset: 30;
+  }
+}
+
+/* Button base */
+button {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, border 0.2s ease, filter 0.2s ease;
+}
+button:hover {
+  filter: brightness(0.95);
+}
+
+/* Input styling */
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  transition: border 0.2s ease;
+}
+input[type="text"]:focus {
+  border-color: #888;
+}
+
+/* Basic animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.subcategory-row {
+  animation: fadeIn 0.3s ease;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.App-header {
+  background-color: #000;
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.react-flow__renderer {
+  width: 100%;
+  height: 100%;
+}
+
+.tools-layout {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Panel hover fix */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .tools-layout {
+    flex-direction: column !important;
+    height: auto;
+  }
+
+  .tools-layout > div:first-child {
+    width: 100% !important;
+  }
+
+  .tools-layout > div:nth-child(2) {
+    display: none !important;
+  }
+
+  .tools-layout > div:nth-child(3) {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: auto;
+    order: 3;
+  }
+
+  .react-flow__renderer {
+    height: auto !important;
+    min-height: 400px;
+  }
+}
+
+/* Toggle panel control */
+.toggle-panel-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background: #000;
+  color: white;
+  padding: 8px;
+  border-radius: 0 6px 6px 0;
+  z-index: 999;
+  font-size: 1.2rem;
+  line-height: 1;
+  border: none;
+}
