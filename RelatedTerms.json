@@ -1,0 +1,227 @@
+{
+  "ads": [
+    "marketing"
+  ],
+  "album art": [
+    "art"
+  ],
+  "animate": [
+    "art",
+    "video"
+  ],
+  "animated": [
+    "art",
+    "video"
+  ],
+  "animation": [
+    "video"
+  ],
+  "art": [
+    "art"
+  ],
+  "audio": [
+    "audio",
+    "speech"
+  ],
+  "automation": [
+    "code"
+  ],
+  "brand": [
+    "marketing"
+  ],
+  "build": [
+    "create"
+  ],
+  "campaign": [
+    "marketing"
+  ],
+  "chatbot": [
+    "chat",
+    "create"
+  ],
+  "cleanup": [
+    "editing"
+  ],
+  "clip": [
+    "video"
+  ],
+  "construct": [
+    "create"
+  ],
+  "content": [
+    "marketing",
+    "text"
+  ],
+  "conversation": [
+    "chat"
+  ],
+  "copy": [
+    "text"
+  ],
+  "cut": [
+    "editing"
+  ],
+  "design": [
+    "art",
+    "create"
+  ],
+  "develop": [
+    "code",
+    "create"
+  ],
+  "developer": [
+    "code"
+  ],
+  "dialogue": [
+    "chat"
+  ],
+  "drawing": [
+    "art"
+  ],
+  "editing": [
+    "editing",
+    "video"
+  ],
+  "enhance": [
+    "editing"
+  ],
+  "film": [
+    "video"
+  ],
+  "funnel": [
+    "marketing"
+  ],
+  "generate": [
+    "code",
+    "create"
+  ],
+  "graphic": [
+    "images"
+  ],
+  "humor": [
+    "marketing"
+  ],
+  "illustration": [
+    "art",
+    "images"
+  ],
+  "images": [
+    "art",
+    "images"
+  ],
+  "llm": [
+    "chat"
+  ],
+  "make": [
+    "create"
+  ],
+  "meeting": [
+    "transcribe"
+  ],
+  "meme": [
+    "marketing"
+  ],
+  "modify": [
+    "editing"
+  ],
+  "motion": [
+    "video"
+  ],
+  "music": [
+    "audio"
+  ],
+  "narration": [
+    "speech"
+  ],
+  "plugin": [
+    "code"
+  ],
+  "produce": [
+    "create"
+  ],
+  "program": [
+    "code"
+  ],
+  "promotion": [
+    "marketing"
+  ],
+  "prompt": [
+    "chat",
+    "text"
+  ],
+  "reel": [
+    "video"
+  ],
+  "render": [
+    "images"
+  ],
+  "script": [
+    "code",
+    "text"
+  ],
+  "scripted": [
+    "text"
+  ],
+  "scripting": [
+    "text"
+  ],
+  "sketch": [
+    "art"
+  ],
+  "software": [
+    "code"
+  ],
+  "speak": [
+    "speech"
+  ],
+  "speech": [
+    "voice",
+    "speech"
+  ],
+  "spoken": [
+    "speech"
+  ],
+  "summary": [
+    "transcribe"
+  ],
+  "text": [
+    "text"
+  ],
+  "trailer": [
+    "video"
+  ],
+  "transcribe": [
+    "transcribe"
+  ],
+  "transcription": [
+    "speech",
+    "transcribe"
+  ],
+  "trim": [
+    "editing"
+  ],
+  "video": [
+    "create",
+    "video"
+  ],
+  "visual": [
+    "images"
+  ],
+  "voice": [
+    "audio",
+    "speech"
+  ],
+  "words": [
+    "text"
+  ],
+  "write": [
+    "text"
+  ],
+  "writing": [
+    "create",
+    "text"
+  ],
+  "written": [
+    "text"
+  ]
+}
