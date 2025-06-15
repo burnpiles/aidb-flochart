@@ -1,4 +1,3 @@
-// src/components/ToolsLibrary.js
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import ReactFlow, { ReactFlowProvider } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -16,6 +15,7 @@ import { generateUserEdges } from '../utils/generateEdges';
 import { reorderNodesWithFlowMode } from '../utils/layoutUtils';
 import useAutoCenterFlow from '../hooks/useAutoCenterFlow';
 import useFlowchartBuilder from '../hooks/useFlowchartBuilder';
+import { useFilters } from '../hooks/FilterContext';
 
 const nodeTypes = { tool: ToolNode };
 
@@ -28,20 +28,24 @@ function ToolsLibraryContent() {
   const [toolsData, setToolsData] = useState({});
   const [allFlows, setAllFlows] = useState({});
   const [tagsData, setTagsData] = useState({});
-
   const [nodes, setNodes] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [tagMatchMode, setTagMatchMode] = useState('some');
   const [activeFlowTitle, setActiveFlowTitle] = useState('');
   const [activeTool, setActiveTool] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const {
+    selectedCategory,
+    selectedSubcategory,
+    highlightedTools,
+    tagMatchMode,
+    clearFilters,
+    applyTagFilter,
+    applyCategoryFilter
+  } = useFilters();
+
+  const {
     flowTemplates,
     selectedTools,
-    highlightedTools,
     connectedToolNames,
     flowEdges,
     stepLabelsMap,
@@ -87,17 +91,7 @@ function ToolsLibraryContent() {
 
   function handleNodeClick(name) {
     const tool = toolsData[name];
-    if (tool) setActiveTool(tool);
-  }
-
-  function resetFlowchartState() {
-    setSelectedTags([]);
-    setSelectedCategory(null);
-    setSelectedSubcategory(null);
-    setTagMatchMode('some');
-    setActiveFlowTitle('');
-    setCurrentTemplate(0);
-    buildSelectorRef.current?.reset();
+    if (tool) setActiveTool({ ...tool, __toolName: name });
   }
 
   async function handleExport() {
@@ -105,7 +99,7 @@ function ToolsLibraryContent() {
     try {
       const dataUrl = await toPng(containerRef.current);
       const link = document.createElement('a');
-      link.download = 'flowhart_ai_screenshot.png';
+      link.download = 'flochart_ai_screenshot.png';
       link.href = dataUrl;
       link.click();
     } catch (e) {
@@ -117,12 +111,13 @@ function ToolsLibraryContent() {
 
   const mobileNodes = useMemo(() => {
     if (!Object.keys(toolsData).length || !Object.keys(tagsData).length) return [];
+
     const newNodes = generateToolNodes({
       toolsData,
       tagsData,
       selectedCategories: selectedCategory ? [selectedCategory] : [],
       selectedSubcategories: selectedSubcategory ? [selectedSubcategory] : [],
-      highlightedTools: selectedTags,
+      highlightedTools,
       selectedTools,
       showOnlyFlowTools,
       connectedToolNames,
@@ -131,25 +126,45 @@ function ToolsLibraryContent() {
       isMobile,
       stepLabelsMap
     });
+
     const sorted = [...newNodes].sort((a, b) => {
       const prio = { green: 0, yellow: 1, grey: 2 };
-      const aPri = prio[a.data.relevance] ?? 3;
-      const bPri = prio[b.data.relevance] ?? 3;
+      const aPri = prio[a.style?.background] ?? 3;
+      const bPri = prio[b.style?.background] ?? 3;
       if (aPri !== bPri) return aPri - bPri;
       return (a.data.toolName || '').localeCompare(b.data.toolName || '');
     });
+
     return reorderNodesWithFlowMode(sorted, selectedTools);
-  }, [toolsData, tagsData, selectedCategory, selectedSubcategory, selectedTags, selectedTools, connectedToolNames, tagMatchMode, isMobile, stepLabelsMap]);
+  }, [
+    toolsData,
+    tagsData,
+    selectedCategory,
+    selectedSubcategory,
+    highlightedTools.join(','), // re-render on change
+    selectedTools,
+    connectedToolNames,
+    tagMatchMode,
+    isMobile,
+    stepLabelsMap
+  ]);
 
   useEffect(() => {
-    setNodes(mobileNodes);
-  }, [mobileNodes]);
+    setNodes([...mobileNodes]);
+  }, [JSON.stringify(mobileNodes)]);
 
   return (
     <div
       ref={containerRef}
       className="tools-layout"
-      style={{ display: 'flex', width: '100vw', height: '100vh', position: 'relative', backgroundColor: 'white', overflowX: 'hidden' }}
+      style={{
+        display: 'flex',
+        width: '100vw',
+        height: '100vh',
+        position: 'relative',
+        backgroundColor: 'white',
+        overflowX: 'hidden'
+      }}
     >
       <div
         style={{
@@ -166,30 +181,22 @@ function ToolsLibraryContent() {
           heading="Choose your project type"
           onFilterChange={(cat, sub) => {
             fetch('/tags.json').then(r => r.json()).then(data => {
-              setSelectedCategory(cat);
-              setSelectedSubcategory(sub);
-              if (!cat) {
-                setSelectedTags([]);
-                setTagMatchMode('some');
-                return;
+              applyCategoryFilter(cat, sub, data);
+              if (isMobile) {
+                const el = document.getElementById('tools-anchor');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
               }
-              const base = cat.toLowerCase();
-              if (sub) {
-                setSelectedTags([sub.toLowerCase()]);
-                setTagMatchMode('every');
-              } else {
-                const arr = data[base] || [];
-                setSelectedTags([base, ...arr.map(t => t.toLowerCase())]);
-                setTagMatchMode('some');
-              }
-              const el = document.getElementById('tools-anchor');
-              if (isMobile && el) el.scrollIntoView({ behavior: 'smooth' });
             });
           }}
         />
 
         <button
-          onClick={resetFlowchartState}
+          onClick={() => {
+            clearFilters();
+            buildSelectorRef.current?.reset();
+            setCurrentTemplate(0);
+            setActiveFlowTitle('');
+          }}
           style={{
             width: '100%',
             marginTop: 10,
@@ -201,17 +208,20 @@ function ToolsLibraryContent() {
             borderRadius: 12
           }}
         >
-          🧹 Clear Filters
+          🧹 RESET FILTERS
         </button>
 
-        <a href="https://www.burnpiles.com/" target="_blank" rel="noreferrer" style={{ display: 'block', marginTop: 12, color: '#f0f0f0', textDecoration: 'none' }}>
+        <a
+          href="https://www.burnpiles.com/"
+          target="_blank"
+          rel="noreferrer"
+          style={{ display: 'block', marginTop: 12, color: '#f0f0f0', textDecoration: 'none' }}
+        >
           🔥 Burnpiles
         </a>
       </div>
 
-      <div
-        style={{ width: isMobile ? '100%' : 320, padding: 10, backgroundColor: '#fafafa', overflowY: 'auto' }}
-      >
+      <div style={{ width: isMobile ? '100%' : 320, padding: 10, backgroundColor: '#fafafa', overflowY: 'auto' }}>
         {flowTemplates.length ? (
           <FlowStepPanel
             flowTemplates={flowTemplates}
@@ -224,13 +234,13 @@ function ToolsLibraryContent() {
               setCurrentTemplate(0);
               setActiveFlowTitle('');
             }}
-            onTakeScreenshot={handleExport} // Added prop here
+            onTakeScreenshot={handleExport}
           />
         ) : (
           !isMobile && (
             <FlowListPanel
               flows={filteredFlows}
-              onSelect={title => {
+              onSelect={(title) => {
                 const found = Object.values(allFlows).flatMap(x => x).find(f => f.title.toLowerCase() === title.toLowerCase());
                 if (found) setActiveFlowTitle(found.title);
               }}
@@ -244,8 +254,8 @@ function ToolsLibraryContent() {
         <div ref={reactFlowWrapperRef} style={{ flex: 1, position: 'relative' }}>
           {!isMobile ? (
             <ReactFlow
-              onInit={inst => (reactFlowInstanceRef.current = inst)}
-              nodes={nodes.map(n => ({ ...n, data: { ...n.data, onClick: handleNodeClick } }))}
+              onInit={(inst) => (reactFlowInstanceRef.current = inst)}
+              nodes={nodes.map((n) => ({ ...n, data: { ...n.data, onClick: handleNodeClick } }))}
               edges={allEdges}
               connectionLineType="simplebezier"
               nodeTypes={nodeTypes}
@@ -263,20 +273,32 @@ function ToolsLibraryContent() {
                 minHeight: '400px'
               }}
             >
-              <div style={{ width: '100%', backgroundColor: '#fff3cd', padding: 10, textAlign: 'center', fontWeight: 'bold', color: '#a94442' }}>
-                🚨 Use Desktop Site To See Flocharts 🚨
+              <div
+                style={{
+                  width: '100%',
+                  backgroundColor: '#fff3cd',
+                  padding: 10,
+                  textAlign: 'center',
+                  fontWeight: 'bold',
+                  color: '#a94442'
+                }}
+              >
+                🚨 Desktop View Recommended 🚨
               </div>
-              {nodes
-                .filter(n => !n.hidden)
-                .map(n => (
-                  <ToolNode key={n.id || n.data.toolName} data={{ ...n.data, onClick: handleNodeClick }} />
-                ))}
+              {nodes.filter(n => !n.hidden).map(n => (
+                <ToolNode key={n.id || n.data.toolName} data={{ ...n.data, onClick: handleNodeClick }} />
+              ))}
             </div>
           )}
         </div>
       </div>
 
-      {activeTool && <ToolModal tool={activeTool} onClose={() => setActiveTool(null)} />}
+      {activeTool && (
+        <ToolModal
+          tool={activeTool}
+          onClose={() => setActiveTool(null)}
+        />
+      )}
     </div>
   );
 }

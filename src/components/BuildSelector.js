@@ -1,13 +1,14 @@
 // src/components/BuildSelector.js
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
+import { useFilters } from '../hooks/FilterContext';
 
 const GREEN = '#ccffcc';
 const YELLOW = '#fffcc9';
 const BORDER_DEFAULT = '#ccc';
 const DARK_GREY = '#d4d4d4';
-const LIGHT_RED = '#f55f4e';
 
 const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFilterChange }, ref) => {
+  const { selectedCategory, selectedSubcategory, selectedTags } = useFilters();
   const [tagsData, setTagsData] = useState({});
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeSubcategory, setActiveSubcategory] = useState(null);
@@ -20,6 +21,23 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
       .then(setTagsData)
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    const fallbackCat =
+      selectedCategory ||
+      (selectedSubcategory && findParentCategory(selectedSubcategory)) ||
+      (selectedTags.length > 0 ? findParentCategory(selectedTags[0]) : null);
+
+    setActiveCategory(fallbackCat);
+    setActiveSubcategory(selectedSubcategory);
+  }, [selectedCategory, selectedSubcategory, selectedTags]);
+
+  const findParentCategory = (sub) => {
+    for (const [cat, subs] of Object.entries(tagsData)) {
+      if (subs.includes(sub)) return cat;
+    }
+    return null;
+  };
 
   const handleMainClick = (cat) => {
     if (cat === activeCategory && !activeSubcategory) {
@@ -42,12 +60,15 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
   };
 
   const handleSubClick = (sub) => {
+    const parent = findParentCategory(sub);
     if (sub === activeSubcategory) {
       setActiveSubcategory(null);
-      onFilterChange(activeCategory, null);
+      setActiveCategory(parent);
+      onFilterChange(parent, null);
     } else {
       setActiveSubcategory(sub);
-      onFilterChange(activeCategory, sub);
+      setActiveCategory(parent);
+      onFilterChange(parent, sub);
     }
   };
 
@@ -55,6 +76,10 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
     reset: () => {
       setActiveCategory(null);
       setActiveSubcategory(null);
+    },
+    setCategoryAndSub: (cat, sub) => {
+      setActiveCategory(cat);
+      setActiveSubcategory(sub);
     }
   }));
 
@@ -93,62 +118,74 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
       <h2 style={{ fontSize: '1.25rem', marginBottom: '16px' }}>{heading}</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
-        {sortedCategories.filter(([key]) => key !== 'featured' && key !== 'assistants').map(([catKey, subItems]) => {
-          const isCatActive = (catKey === activeCategory);
-          const catBgColor = isCatActive ? (activeSubcategory ? YELLOW : GREEN) : '#f0f0f0';
-          const catBorderColor = isCatActive ? (activeSubcategory ? YELLOW : GREEN) : BORDER_DEFAULT;
+        {sortedCategories
+          .filter(([key]) => key !== 'featured' && key !== 'assistants')
+          .map(([catKey, subItems]) => {
+            const isCatActive =
+              catKey === activeCategory ||
+              (activeSubcategory && tagsData[catKey]?.includes(activeSubcategory));
 
-          return (
-            <div key={catKey}>
-              <button
-                onClick={() => handleMainClick(catKey)}
-                style={{
-                  width: '100%',
-                  padding: '14px 18px',
-                  fontSize: '1.1rem',
-                  borderRadius: '12px',
-                  textAlign: 'left',
-                  border: `2px solid ${catBorderColor}`,
-                  background: catBgColor,
-                  color: '#000',
-                  cursor: 'pointer'
-                }}
-              >
-                {getEmoji(catKey)} {titleCase(catKey)}
-              </button>
+            const isSubVisible =
+              !isMobile && isCatActive && subItems.length > 0;
 
-              {!isMobile && isCatActive && subItems.length > 0 && (
-                <div className="subcategory-row" style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {subItems.map(subItem => {
-                    const isSubActive = (subItem === activeSubcategory);
-                    const subBg = isSubActive ? GREEN : '#fff';
-                    const subBorder = isSubActive ? GREEN : '#bbb';
+            const isYellow = isCatActive && activeSubcategory;
+            const catBgColor = isCatActive ? (isYellow ? YELLOW : GREEN) : '#f0f0f0';
+            const catBorderColor = isCatActive ? (isYellow ? YELLOW : GREEN) : BORDER_DEFAULT;
 
-                    return (
-                      <button
-                        key={subItem}
-                        onClick={() => handleSubClick(subItem)}
-                        style={{
-                          width: '100%',
-                          padding: '10px 14px',
-                          fontSize: '0.95rem',
-                          borderRadius: '10px',
-                          border: `1px solid ${subBorder}`,
-                          background: subBg,
-                          color: '#000',
-                          cursor: 'pointer',
-                          textAlign: 'left'
-                        }}
-                      >
-                        {subItem}
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          );
-        })}
+            return (
+              <div key={catKey}>
+                <button
+                  onClick={() => handleMainClick(catKey)}
+                  style={{
+                    width: '100%',
+                    padding: '14px 18px',
+                    fontSize: '1.1rem',
+                    borderRadius: '12px',
+                    textAlign: 'left',
+                    border: `2px solid ${catBorderColor}`,
+                    background: catBgColor,
+                    color: '#000',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {getEmoji(catKey)} {titleCase(catKey)}
+                </button>
+
+                {isSubVisible && (
+                  <div
+                    className="subcategory-row"
+                    style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '10px' }}
+                  >
+                    {subItems.map(subItem => {
+                      const isSubActive = subItem === activeSubcategory;
+                      const subBg = isSubActive ? GREEN : '#fff';
+                      const subBorder = isSubActive ? GREEN : '#bbb';
+
+                      return (
+                        <button
+                          key={subItem}
+                          onClick={() => handleSubClick(subItem)}
+                          style={{
+                            width: '100%',
+                            padding: '10px 14px',
+                            fontSize: '0.95rem',
+                            borderRadius: '10px',
+                            border: `1px solid ${subBorder}`,
+                            background: subBg,
+                            color: '#000',
+                            cursor: 'pointer',
+                            textAlign: 'left'
+                          }}
+                        >
+                          {subItem}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
       </div>
 
       <hr style={{ border: 'none', borderTop: '2px solid #222', margin: '20px 0' }} />
@@ -168,9 +205,8 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
           marginBottom: '12px'
         }}
       >
-        👨🏻‍💻 Submit Tool
+        👨🏻‍💻 SUBMIT TOOL
       </button>
-
     </div>
   );
 });

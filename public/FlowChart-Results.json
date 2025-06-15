@@ -248,7 +248,7 @@
           "output": "script",
           "tools": [
             "Otter",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Perplexity AI",
             "Gemini (Google)",
@@ -479,7 +479,7 @@
           "output": "ad copy",
           "tools": [
             "Anyword",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Perplexity AI",
             "Gemini (Google)",
@@ -810,7 +810,7 @@
           "input": "idea",
           "output": "script",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Gemini (Google)",
             "Copy",
@@ -866,7 +866,7 @@
           "input": "script",
           "output": "key frame idea",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Gemini (Google)"
           ],
@@ -910,7 +910,7 @@
           "input": "prompt",
           "output": "layout",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Gemini (Google)",
             "Framer"
@@ -998,7 +998,7 @@
           "input": "idea",
           "output": "script",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Gemini (Google)",
             "WriterAI"
@@ -1043,7 +1043,7 @@
           "input": "blog",
           "output": "clean script",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Rewriter",
             "Copy"
@@ -1131,7 +1131,7 @@
           "input": "product idea",
           "output": "copy",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Copy.ai",
             "Jasper",
             "Claude (Anthropic)"
@@ -1228,7 +1228,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1299,7 +1299,7 @@
           "input": "panels",
           "output": "layout",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -1338,7 +1338,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1383,7 +1383,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1446,7 +1446,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1517,7 +1517,7 @@
           "input": "story + illustrations",
           "output": "book layout",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -1649,7 +1649,7 @@
           "input": "translated copy",
           "output": "localized site",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -1689,7 +1689,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1763,7 +1763,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -1967,7 +1967,7 @@
             "Anyword",
             "Beautiful",
             "CapCut",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -2087,7 +2087,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -2158,7 +2158,7 @@
           "input": "scenes + story",
           "output": "interactive app",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -2195,7 +2195,7 @@
           "input": "faq",
           "output": "chat logic",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -2221,7 +2221,7 @@
           "input": "chat logic",
           "output": "chatbot",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",
@@ -2261,7 +2261,7 @@
           "tools": [
             "Anyword",
             "Beautiful",
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Copy",
             "Copy.ai",
@@ -2305,7 +2305,7 @@
           "input": "description",
           "output": "page layout",
           "tools": [
-            "ChatGPT (OpenAI)",
+            "ChatGPT",
             "Claude (Anthropic)",
             "Cursor",
             "Framer",

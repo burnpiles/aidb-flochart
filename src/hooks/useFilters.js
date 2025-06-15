@@ -1,49 +1,52 @@
-// hooks/useFilters.js
-import { useState, useEffect } from 'react';
+// src/hooks/useFilters.js
+import { useState, useCallback } from 'react';
 
-export const useFilters = (toolsData, searchQuery) => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [selectedSubcategories, setSelectedSubcategories] = useState([]);
+export default function useFilters() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [tagMatchMode, setTagMatchMode] = useState('some');
 
-  useEffect(() => {
-    const terms = searchQuery.trim().toLowerCase().split(/\s+/).filter(Boolean);
-    if (terms.length === 0) return;
+  const clearFilters = useCallback(() => {
+    setSelectedCategory(null);
+    setSelectedSubcategory(null);
+    setSelectedTags([]);
+    setTagMatchMode('some');
+  }, []);
 
-    const catSet = new Set();
-    const subSet = new Set();
+  const applyTagFilter = useCallback((tag) => {
+    setSelectedCategory(null);
+    setSelectedSubcategory(null);
+    setSelectedTags([tag.toLowerCase()]);
+    setTagMatchMode('every');
+  }, []);
 
-    Object.values(toolsData).forEach(tool => {
-      const cats = tool.Category?.split(',').map(s => s.trim().toLowerCase()) || [];
-      const subs = tool.Subcategory?.split(',').map(s => s.trim().toLowerCase()) || [];
-
-      cats.forEach(cat => { if (terms.includes(cat)) catSet.add(cat); });
-      subs.forEach(sub => { if (terms.includes(sub)) subSet.add(sub); });
-    });
-
-    setSelectedCategories([...catSet]);
-    setSelectedSubcategories([...subSet]);
-  }, [searchQuery, toolsData]);
-
-  const toggleCategory = (raw) => {
-    const clean = raw.toLowerCase().trim();
-    setSelectedCategories(prev =>
-      prev.includes(clean) ? prev.filter(c => c !== clean) : [...prev, clean]
-    );
-  };
-
-  const toggleSubcategory = (raw) => {
-    const clean = raw.toLowerCase().trim();
-    setSelectedSubcategories(prev =>
-      prev.includes(clean) ? prev.filter(s => s !== clean) : [...prev, clean]
-    );
-  };
+  const applyCategoryFilter = useCallback((cat, sub, tagsData) => {
+    setSelectedCategory(cat);
+    setSelectedSubcategory(sub);
+    if (!cat) {
+      setSelectedTags([]);
+      setTagMatchMode('some');
+    } else {
+      const base = cat.toLowerCase();
+      if (sub) {
+        setSelectedTags([sub.toLowerCase()]);
+        setTagMatchMode('every');
+      } else {
+        const arr = tagsData[base] || [];
+        setSelectedTags([base, ...arr.map(t => t.toLowerCase())]);
+        setTagMatchMode('some');
+      }
+    }
+  }, []);
 
   return {
-    selectedCategories,
-    setSelectedCategories,
-    selectedSubcategories,
-    setSelectedSubcategories,
-    toggleCategory,
-    toggleSubcategory
+    selectedCategory,
+    selectedSubcategory,
+    selectedTags,
+    tagMatchMode,
+    clearFilters,
+    applyTagFilter,
+    applyCategoryFilter
   };
-};
+}

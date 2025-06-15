@@ -1,6 +1,19 @@
 import React, { useEffect } from 'react';
+import { useFilters } from '../hooks/FilterContext';
+
+const ALLOWED_MODAL_TAGS = [
+  'featured', 'assistants', 'code', 'audio', 'images', 'video', 'write'
+];
+
+const socialIcons = {
+  Instagram: 'https://img.icons8.com/ios-filled/50/instagram-new.png',
+  X: 'https://img.icons8.com/ios-filled/50/twitterx--v2.png',
+  LinkedIn: 'https://img.icons8.com/ios-filled/50/linkedin.png',
+};
 
 export default function ToolModal({ tool, onClose }) {
+  const { applyTagFilter } = useFilters();
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
@@ -24,46 +37,78 @@ export default function ToolModal({ tool, onClose }) {
     return (
       <iframe
         width="100%"
-        height="240"
+        height="300"
         src={`https://www.youtube.com/embed/${id}`}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        style={{ marginTop: '12px', borderRadius: '8px' }}
+        style={{ borderRadius: '10px', marginTop: 16 }}
       />
     );
   };
 
   return (
-    <div className="modal-overlay" style={styles.overlay} onClick={(e) => e.target.classList.contains('modal-overlay') && onClose()}>
-      <div style={styles.content}>
+    <div
+      className="modal-overlay"
+      style={styles.overlay}
+      onClick={(e) => e.target.classList.contains('modal-overlay') && onClose()}
+    >
+      <div
+        className="modal-animate-in"
+        style={styles.modal}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button style={styles.close} onClick={onClose}>❌</button>
 
-        <div style={{ textAlign: 'center', marginBottom: 12 }}>
+        <div style={styles.header}>
           {tool['Logo URL'] && <img src={tool['Logo URL']} alt={tool.Company} style={styles.logo} />}
-          <h2 style={styles.title}>{tool.Company}</h2>
+          {tool.Tool && <h2 style={styles.title}>{tool.Tool}</h2>}
+          {tool.Company && (
+            <p style={styles.subtitle}>
+              {tool.tags?.some(t => t.toLowerCase() === 'featured') && <span style={styles.star}>⭐ </span>}
+              {tool.Company}
+            </p>
+          )}
+
+
+          {tool.Website && (
+            <a href={tool.Website} target="_blank" rel="noreferrer" style={styles.visitBtn}>
+              Visit →
+            </a>
+          )}
+
+          <div style={styles.socialContainer}>
+            {['Instagram', 'X', 'LinkedIn'].map((platform) => (
+              tool[platform] && (
+                <a
+                  key={platform}
+                  href={`https://${tool[platform]}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={styles.socialLink}
+                >
+                  <img src={socialIcons[platform]} alt={platform} style={styles.socialIcon} />
+                </a>
+              )
+            ))}
+          </div>
         </div>
 
-        {tool['Function / Use'] && <p style={styles.desc}>{tool['Function / Use']}</p>}
+        {tool['YouTube Tutorial'] && renderYouTubeEmbed(tool['YouTube Tutorial'])}
 
-        {tool.Website && (
-          <a href={tool.Website} target="_blank" rel="noreferrer" style={styles.link}>
-            Visit Website →
+        {(tool.Description || tool['Function / Use']) && (
+          <div style={styles.aboutSection}>
+            <h3 style={styles.sectionTitle}>About the Tool</h3>
+            <p style={styles.aboutText}>
+              {tool.Description || tool['Function / Use']}
+            </p>
+          </div>
+        )}
+
+        {tool['Company Profile Link'] && (
+          <a href={tool['Company Profile Link']} target="_blank" rel="noreferrer" style={styles.profileBtn}>
+            Go to Company Profile
           </a>
-        )}
-
-        {tool['Tutorial YouTube'] && (
-          <>
-            <h4 style={styles.heading}>Tutorial:</h4>
-            {renderYouTubeEmbed(tool['Tutorial YouTube'])}
-          </>
-        )}
-
-        {tool['Example Project YouTube'] && (
-          <>
-            <h4 style={styles.heading}>Example Project:</h4>
-            {renderYouTubeEmbed(tool['Example Project YouTube'])}
-          </>
         )}
       </div>
     </div>
@@ -73,63 +118,113 @@ export default function ToolModal({ tool, onClose }) {
 const styles = {
   overlay: {
     position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    width: '100%',
-    height: '100%',
+    inset: 0,
     backgroundColor: 'rgba(0,0,0,0.6)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 1000,
     overflow: 'auto',
-  },
-  content: {
-    background: '#fff',
-    borderRadius: 10,
     padding: 20,
-    width: '100%',
+  },
+  modal: {
+    background: '#fff',
+    borderRadius: 16,
+    padding: 24,
     maxWidth: 600,
-    maxHeight: '90vh',
-    overflowY: 'auto',
+    width: '100%',
     position: 'relative',
-    fontSize: '0.9rem',
-    lineHeight: '1.4',
     boxSizing: 'border-box',
+    animation: 'fadeIn 0.3s ease',
   },
   close: {
     position: 'absolute',
-    top: 10,
-    right: 14,
-    fontSize: '1.2rem',
-    border: 'none',
+    top: 14,
+    right: 18,
     background: 'transparent',
-    cursor: 'pointer'
+    border: 'none',
+    fontSize: 20,
+    cursor: 'pointer',
+  },
+  header: {
+    textAlign: 'center',
+    marginBottom: 24,
   },
   logo: {
-    maxWidth: 50,
-    marginBottom: 10
+    maxHeight: 48,
+    marginBottom: 8,
   },
   title: {
-    fontSize: '1.3rem',
-    margin: 0
+    fontSize: '1.7rem',
+    margin: 0,
   },
-  desc: {
-    marginBottom: 12,
-    color: '#333'
+  star: {
+    color: '#ffc107',
+    marginRight: 4,
   },
-  link: {
-    color: '#2970ff',
+  subtitle: {
+    color: '#555',
+    marginTop: 8,
+    fontSize: '1rem',
+  },
+  tagContainer: {
+    marginTop: 10,
+    display: 'flex',
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    gap: '8px',
+  },
+  tagPill: {
+    padding: '6px 12px',
+    fontSize: '0.8rem',
+    borderRadius: 999,
+    background: '#f0f0f0',
+    border: '1px solid #ccc',
+    cursor: 'pointer',
+  },
+  visitBtn: {
+    display: 'inline-block',
+    marginTop: 16,
+    padding: '8px 16px',
+    backgroundColor: '#000',
+    color: '#fff',
+    borderRadius: 8,
     textDecoration: 'none',
     fontWeight: 'bold',
-    display: 'inline-block',
-    marginBottom: 20
   },
-  heading: {
-    marginTop: 18,
-    marginBottom: 6,
-    fontSize: '0.95rem'
-  }
+  socialContainer: {
+    marginTop: 16,
+    display: 'flex',
+    justifyContent: 'center',
+    gap: 16,
+  },
+  socialIcon: {
+    width: 24,
+    height: 24,
+  },
+  socialLink: {
+    display: 'inline-block',
+  },
+  aboutSection: {
+    marginTop: 32,
+  },
+  sectionTitle: {
+    fontSize: '1.1rem',
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  aboutText: {
+    color: '#333',
+    lineHeight: 1.5,
+  },
+  profileBtn: {
+    marginTop: 24,
+    display: 'inline-block',
+    padding: '10px 18px',
+    border: '2px solid #000',
+    borderRadius: 8,
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    color: '#000',
+  },
 };

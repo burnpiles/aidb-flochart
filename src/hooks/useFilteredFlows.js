@@ -1,18 +1,31 @@
 // src/hooks/useFilteredFlows.js
 import { useMemo } from 'react';
 
-export default function useFilteredFlows(allFlows, selectedCategory, selectedSubcategory) {
+export default function useFilteredFlows(allFlows, selectedCategory, selectedSubcategory, selectedTags = [], tagMatchMode = 'some') {
   return useMemo(() => {
     const arr = Object.values(allFlows || {}).flatMap(x => x);
-    const catLC = selectedCategory?.toLowerCase();
-    const subLC = selectedSubcategory?.toLowerCase();
+    const tagsLC = selectedTags.map(t => t.toLowerCase());
 
     return arr.map(f => {
-      const tagsLC = (f.tags || []).map(t => t.toLowerCase());
+      const toolTags = (f.tags || []).map(t => t.toLowerCase());
+
+      // default grey
       let relevance = 'grey';
-      if (subLC && tagsLC.includes(subLC)) relevance = 'green';
-      else if (catLC && tagsLC.includes(catLC)) relevance = subLC ? 'yellow' : 'green';
+
+      if (tagsLC.length === 0) return { ...f, relevance };
+
+      const matchCount = tagsLC.filter(tag => toolTags.includes(tag)).length;
+
+      const isMatch =
+        tagMatchMode === 'every' ? matchCount === tagsLC.length :
+        tagMatchMode === 'some' ? matchCount > 0 :
+        false;
+
+      if (isMatch) {
+        relevance = matchCount === tagsLC.length ? 'green' : 'yellow';
+      }
+
       return { ...f, relevance };
     });
-  }, [allFlows, selectedCategory, selectedSubcategory]);
+  }, [allFlows, selectedTags, tagMatchMode]);
 }

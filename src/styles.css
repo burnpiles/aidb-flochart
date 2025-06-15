@@ -133,6 +133,10 @@ button:disabled {
   }
 }
 
+.modal-animate-in {
+  animation: fadeIn 2.5s ease;
+}
+
 /* Toggle panel control */
 .toggle-panel-button {
   position: absolute;
