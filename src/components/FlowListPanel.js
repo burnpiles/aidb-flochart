@@ -16,38 +16,14 @@ function toYouTubeEmbed(url) {
   }
 }
 
-function FlowListPanel({ flows = [], onSelect }) {
+function FlowListPanel({ flows = [], onSelect, searchQuery, onSearchChange }) {
   const [infoFlow, setInfoFlow] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearchChange = (e) => setSearchQuery(e.target.value);
-  const handleSuggestionClick = (sug) => setSearchQuery(sug);
-  const handleClear = () => setSearchQuery('');
+  const handleClear = () => onSearchChange('');
 
-  const keywords = searchQuery.toLowerCase().split(/\s+/).filter(Boolean);
-
-  const matchCount = (text) => keywords.reduce((acc, k) => acc + (text.toLowerCase().includes(k) ? 1 : 0), 0);
-
-  let green = [], yellow = [], grey = [];
-
-  if (searchQuery) {
-    flows.forEach(flow => {
-      const count = matchCount(flow.title);
-      if (count >= 2) green.push({ ...flow, relevance: 'green' });
-      else if (count === 1) yellow.push({ ...flow, relevance: 'yellow' });
-      else grey.push({ ...flow, relevance: 'grey' });
-    });
-  } else {
-    flows.forEach(flow => {
-      if (flow.relevance === 'green') green.push(flow);
-      else if (flow.relevance === 'yellow') yellow.push(flow);
-      else grey.push(flow);
-    });
-  }
-
-  const greenTitles = new Set(green.map(f => f.title));
-  const yellowTitles = new Set(yellow.map(f => f.title));
-  grey = grey.filter(f => !greenTitles.has(f.title) && !yellowTitles.has(f.title));
+  const green = flows.filter(f => f.relevance === 'green');
+  const yellow = flows.filter(f => f.relevance === 'yellow');
+  const grey = flows.filter(f => f.relevance === 'grey');
 
   green.sort((a, b) => a.title.localeCompare(b.title));
   yellow.sort((a, b) => a.title.localeCompare(b.title));
@@ -117,9 +93,9 @@ function FlowListPanel({ flows = [], onSelect }) {
       <div>
         <SearchControls
           searchQuery={searchQuery}
-          handleSearchChange={handleSearchChange}
+          handleSearchChange={(e) => onSearchChange(e.target.value)}
           suggestions={[]}
-          handleSuggestionClick={handleSuggestionClick}
+          handleSuggestionClick={(sug) => onSearchChange(sug)}
           handleClear={handleClear}
           handleExport={null}
           overrideClearLabel="CLEAR SEARCH"

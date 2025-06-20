@@ -52,6 +52,7 @@ function ToolsLibraryContent() {
   const reactFlowInstanceRef = useRef(null);
   const buildSelectorRef = useRef(null);
 
+  const [searchQuery, setSearchQuery] = useState('');
   const [toolsData, setToolsData] = useState({});
   const [allFlows, setAllFlows] = useState({});
   const [tagsData, setTagsData] = useState({});
@@ -116,12 +117,28 @@ function ToolsLibraryContent() {
     });
   }, [allFlows, selectedCategory, selectedSubcategory]);
 
+  const finalFilteredFlows = useMemo(() => {
+    const flowsToFilter = filteredFlows;
+    if (!searchQuery) {
+      return flowsToFilter;
+    }
+    const keywords = searchQuery.toLowerCase().split(/\s+/).filter(Boolean);
+    const matchCount = (text) => keywords.reduce((acc, k) => acc + (text.toLowerCase().includes(k) ? 1 : 0), 0);
+
+    return flowsToFilter.map(flow => {
+      const count = matchCount(flow.title);
+      if (count >= 2) return { ...flow, relevance: 'green' };
+      if (count === 1) return { ...flow, relevance: 'yellow' };
+      return { ...flow, relevance: 'grey' };
+    });
+  }, [searchQuery, filteredFlows]);
+
   const flowListRelevance = useMemo(() => {
-    if (!filteredFlows || filteredFlows.length === 0) return 'default';
-    if (filteredFlows.some(f => f.relevance === 'green')) return 'green';
-    if (filteredFlows.some(f => f.relevance === 'yellow')) return 'yellow';
+    if (!finalFilteredFlows || finalFilteredFlows.length === 0) return 'default';
+    if (finalFilteredFlows.some(f => f.relevance === 'green')) return 'green';
+    if (finalFilteredFlows.some(f => f.relevance === 'yellow')) return 'yellow';
     return 'default';
-  }, [filteredFlows]);
+  }, [finalFilteredFlows]);
 
   function handleNodeClick(name) {
     const tool = toolsData[name];
@@ -312,7 +329,9 @@ function ToolsLibraryContent() {
           ) : (
             !isMobile && (
               <FlowListPanel
-                flows={filteredFlows}
+                flows={finalFilteredFlows}
+                searchQuery={searchQuery}
+                onSearchChange={(q) => setSearchQuery(q)}
                 onSelect={(title) => {
                   const found = Object.values(allFlows).flatMap(x => x).find(f => f.title.toLowerCase() === title.toLowerCase());
                   if (found) setActiveFlowTitle(found.title);
