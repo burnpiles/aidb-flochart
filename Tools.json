@@ -3,7 +3,6 @@
     "Company": "Replika",
     "tags": [
       "audio",
-      "avatar",
       "chatbot"
     ],
     "Free": false,
@@ -19,8 +18,8 @@
   "ChatGPT": {
     "Company": "OpenAI",
     "tags": [
+      "brains",
       "featured",
-      "assistants",
       "code",
       "write",
       "chatbot",
@@ -40,7 +39,6 @@
     "Company": "Anthropic",
     "tags": [
       "featured",
-      "assistants",
       "code",
       "write",
       "chatbot",
@@ -60,10 +58,8 @@
     "Company": "Perplexity",
     "tags": [
       "featured",
-      "assistants",
-      "write",
-      "analysis",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://www.perplexity.ai",
@@ -78,11 +74,10 @@
   "Gemini (Google)": {
     "Company": "Google",
     "tags": [
-      "featured",
-      "assistants",
       "code",
-      "write",
-      "marketing"
+      "featured",
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://gemini.google.com",
@@ -97,9 +92,9 @@
   "Midjourney": {
     "Company": "Midjourney",
     "tags": [
-      "images",
+      "artistic",
       "realistic",
-      "artistic"
+      "images"
     ],
     "Free": false,
     "Website": "https://www.midjourney.com",
@@ -114,9 +109,9 @@
   "Leonardo.ai": {
     "Company": "Leonardo",
     "tags": [
-      "images",
       "video",
       "artistic",
+      "images",
       "design"
     ],
     "Free": false,
@@ -132,8 +127,8 @@
   "Runway ML": {
     "Company": "Runway",
     "tags": [
-      "featured",
       "video",
+      "featured",
       "editing",
       "animation"
     ],
@@ -150,10 +145,10 @@
   "DALL-E (OpenAI)": {
     "Company": "OpenAI",
     "tags": [
-      "images",
       "artistic",
-      "design",
-      "realistic"
+      "realistic",
+      "images",
+      "design"
     ],
     "Free": true,
     "Website": "https://openai.com/dall-e",
@@ -169,9 +164,9 @@
     "Company": "Descript",
     "tags": [
       "audio",
-      "video",
+      "podcast",
       "editing",
-      "podcast"
+      "video"
     ],
     "Free": true,
     "Website": "https://www.descript.com",
@@ -187,7 +182,6 @@
     "Company": "Synthesia",
     "tags": [
       "video",
-      "avatar",
       "animation"
     ],
     "Free": false,
@@ -219,10 +213,9 @@
   "Canva AI": {
     "Company": "Canva",
     "tags": [
+      "retouch",
       "images",
-      "design",
-      "avatar",
-      "retouch"
+      "design"
     ],
     "Free": true,
     "Website": "https://www.canva.com",
@@ -238,7 +231,6 @@
     "Company": "HeyGen",
     "tags": [
       "video",
-      "avatar",
       "animation"
     ],
     "Free": false,
@@ -255,8 +247,8 @@
     "Company": "Pika Labs",
     "tags": [
       "video",
-      "animation",
-      "generation"
+      "generation",
+      "animation"
     ],
     "Free": true,
     "Website": "https://pika.art",
@@ -271,8 +263,7 @@
   "DeepL": {
     "Company": "DeepL",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://www.deepl.com",
@@ -304,8 +295,8 @@
   "Jasper": {
     "Company": "Jasper",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": false,
     "Website": "https://www.jasper.ai",
@@ -337,9 +328,9 @@
   "Adobe Firefly": {
     "Company": "Adobe",
     "tags": [
-      "images",
       "artistic",
-      "realistic"
+      "realistic",
+      "images"
     ],
     "Free": true,
     "Website": "https://firefly.adobe.com",
@@ -354,9 +345,9 @@
   "Stable Diffusion": {
     "Company": "Stability AI",
     "tags": [
-      "images",
       "artistic",
-      "realistic"
+      "realistic",
+      "images"
     ],
     "Free": true,
     "Website": "https://stability.ai",
@@ -371,8 +362,8 @@
   "Krea.ai": {
     "Company": "Krea.ai",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -388,9 +379,9 @@
   "Copy.ai": {
     "Company": "Copy.ai",
     "tags": [
-      "write",
+      "rewrite",
       "marketing",
-      "rewrite"
+      "write"
     ],
     "Free": true,
     "Website": "https://www.copy.ai",
@@ -405,8 +396,8 @@
   "Anyword": {
     "Company": "Anyword",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": false,
     "Website": "https://anyword.com",
@@ -470,8 +461,8 @@
     "Company": "Relume",
     "tags": [
       "code",
-      "frontend",
-      "automation"
+      "automation",
+      "frontend"
     ],
     "Free": true,
     "Website": "https://relume.io",
@@ -502,8 +493,8 @@
   "Magician": {
     "Company": "Magician",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -567,8 +558,8 @@
   "Lately AI": {
     "Company": "Lately",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": false,
     "Website": "https://www.lately.ai",
@@ -615,8 +606,8 @@
   "Spline": {
     "Company": "Spline",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -632,8 +623,8 @@
   "Kaedim": {
     "Company": "Kaedim",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": false,
@@ -649,8 +640,8 @@
   "Tripo3D": {
     "Company": "Tripo3D",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -666,8 +657,8 @@
   "Meshy.ai": {
     "Company": "Meshy",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -683,8 +674,8 @@
   "Luma AI": {
     "Company": "Luma AI",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -700,8 +691,8 @@
   "Vizcom": {
     "Company": "Vizcom",
     "tags": [
-      "images",
       "artistic",
+      "images",
       "design"
     ],
     "Free": true,
@@ -717,9 +708,8 @@
   "MetaHuman Creator": {
     "Company": "Epic Games",
     "tags": [
-      "images",
-      "avatar",
-      "artistic"
+      "artistic",
+      "images"
     ],
     "Free": true,
     "Website": "https://www.unrealengine.com/en-US/metahuman",
@@ -734,9 +724,9 @@
   "RunwayML (Image)": {
     "Company": "Runway",
     "tags": [
-      "images",
+      "artistic",
       "realistic",
-      "artistic"
+      "images"
     ],
     "Free": true,
     "Website": "https://runwayml.com",
@@ -769,8 +759,7 @@
     "Company": "ByteDance",
     "tags": [
       "video",
-      "editing",
-      "analysis"
+      "editing"
     ],
     "Free": true,
     "Website": "https://www.capcut.com",
@@ -786,8 +775,7 @@
     "Company": "Blackmagic Design",
     "tags": [
       "video",
-      "editing",
-      "analysis"
+      "editing"
     ],
     "Free": true,
     "Website": "https://www.blackmagicdesign.com/products/davinciresolve",
@@ -803,7 +791,6 @@
     "Company": "Kuaishou",
     "tags": [
       "video",
-      "avatar",
       "animation"
     ],
     "Free": false,
@@ -820,8 +807,7 @@
     "Company": "Veed.io",
     "tags": [
       "video",
-      "editing",
-      "analysis"
+      "editing"
     ],
     "Free": true,
     "Website": "https://www.veed.io",
@@ -837,8 +823,7 @@
     "Company": "Wisecut",
     "tags": [
       "video",
-      "editing",
-      "analysis"
+      "editing"
     ],
     "Free": true,
     "Website": "https://www.wisecut.video",
@@ -885,8 +870,7 @@
     "Company": "Magic Hour",
     "tags": [
       "video",
-      "animation",
-      "avatar"
+      "animation"
     ],
     "Free": true,
     "Website": "https://magichour.ai",
@@ -917,8 +901,8 @@
   "Crayo": {
     "Company": "Crayo",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://crayo.ai",
@@ -933,8 +917,8 @@
   "Crayon AI": {
     "Company": "Crayon",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://www.crayon.co",
@@ -965,8 +949,8 @@
   "Gamma": {
     "Company": "Gamma",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://gamma.app",
@@ -1015,8 +999,8 @@
     "Company": "Vercel",
     "tags": [
       "code",
-      "frontend",
-      "automation"
+      "automation",
+      "frontend"
     ],
     "Free": true,
     "Website": "https://v0.dev",
@@ -1081,8 +1065,8 @@
   "Unbounce Smart Copy": {
     "Company": "Unbounce",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://unbounce.com",
@@ -1114,8 +1098,8 @@
     "Company": "Otter",
     "tags": [
       "audio",
-      "voice",
-      "transcribe"
+      "transcribe",
+      "voice"
     ],
     "Free": true,
     "Website": "https://otter.ai",
@@ -1195,8 +1179,8 @@
     "Company": "Vapi AI",
     "tags": [
       "audio",
-      "chatbot",
-      "voice"
+      "voice",
+      "chatbot"
     ],
     "Free": true,
     "Website": "https://www.vapi.ai",
@@ -1324,8 +1308,8 @@
   "Copy": {
     "Company": "Copy",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://www.copy.ai",
@@ -1340,8 +1324,8 @@
   "Rewriter": {
     "Company": "Rewriter",
     "tags": [
-      "write",
-      "rewrite"
+      "rewrite",
+      "write"
     ],
     "Free": true,
     "Website": "https://rewriter.ai",
@@ -1356,8 +1340,8 @@
   "WriterAI": {
     "Company": "Writer AI",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://writer.com",
@@ -1372,8 +1356,8 @@
   "Smartwriter": {
     "Company": "Smartwriter",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://smartwriter.ai",
@@ -1388,8 +1372,8 @@
   "CopyMonkey": {
     "Company": "CopyMonkey",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://copymonkey.ai",
@@ -1404,8 +1388,8 @@
   "HemingwayAI": {
     "Company": "Hemingway AI",
     "tags": [
-      "write",
-      "rewrite"
+      "rewrite",
+      "write"
     ],
     "Free": true,
     "Website": "https://hemingwayapp.com",
@@ -1420,8 +1404,7 @@
   "ReadableAI": {
     "Company": "Readable AI",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://readable.com",
@@ -1436,8 +1419,8 @@
   "DyslexieFontAI": {
     "Company": "Dyslexie Font AI",
     "tags": [
-      "write",
-      "rewrite"
+      "rewrite",
+      "write"
     ],
     "Free": true,
     "Website": "https://www.dyslexiefont.com/en/tools",
@@ -1499,8 +1482,8 @@
   "Beautiful": {
     "Company": "Beautiful.ai",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://www.beautiful.ai",
@@ -1515,8 +1498,8 @@
   "Tome": {
     "Company": "Tome",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://tome.app",
@@ -1531,8 +1514,8 @@
   "GammaApp": {
     "Company": "Gamma",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://gamma.app",
@@ -1547,8 +1530,8 @@
   "PitchAI": {
     "Company": "Pitch AI",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://pitch.com",
@@ -1563,8 +1546,8 @@
   "Slidebean": {
     "Company": "Slidebean",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://slidebean.com",
@@ -1579,8 +1562,8 @@
   "Decktopus": {
     "Company": "Decktopus",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://decktopus.com",
@@ -1595,8 +1578,8 @@
   "TomeAI": {
     "Company": "Tome AI",
     "tags": [
-      "write",
-      "rewrite"
+      "rewrite",
+      "write"
     ],
     "Free": true,
     "Website": "https://tome.app",
@@ -1611,8 +1594,7 @@
   "Scribe": {
     "Company": "Scribe",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://scribehow.com",
@@ -1627,8 +1609,8 @@
   "GammaAI": {
     "Company": "Gamma AI",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://gamma.app",
@@ -1659,8 +1641,7 @@
   "ResearchFlow": {
     "Company": "Research Flow",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://researchflow.ai",
@@ -1675,8 +1656,7 @@
   "SciSpace": {
     "Company": "SciSpace",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://scispace.com",
@@ -1691,8 +1671,7 @@
   "ElicitAI": {
     "Company": "Elicit AI",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://elicit.org",
@@ -1707,8 +1686,8 @@
   "CrayonAI": {
     "Company": "Crayon AI",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://crayon.ai",
@@ -1723,8 +1702,7 @@
   "Glimpse": {
     "Company": "Glimpse",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://meetglimpse.com",
@@ -1739,8 +1717,7 @@
   "GroundNews": {
     "Company": "Ground News",
     "tags": [
-      "write",
-      "analysis"
+      "write"
     ],
     "Free": true,
     "Website": "https://ground.news",
@@ -1755,8 +1732,8 @@
   "Pattern89": {
     "Company": "Pattern89",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://pattern89.com",
@@ -1771,8 +1748,8 @@
   "SparkToro": {
     "Company": "SparkToro",
     "tags": [
-      "write",
-      "marketing"
+      "marketing",
+      "write"
     ],
     "Free": true,
     "Website": "https://sparktoro.com",
