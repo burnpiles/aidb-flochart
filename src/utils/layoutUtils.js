@@ -1,6 +1,6 @@
 // src/utils/layoutUtils.js
 
-export function reorderNodesWithFlowMode(nodesIn, selectedToolsOrder) {
+export function reorderNodesWithFlowMode(nodesIn, selectedToolsOrder, containerWidth = 800) {
   const idMap = {};
   nodesIn.forEach(n => { idMap[n.id] = n; });
 
@@ -39,19 +39,19 @@ export function reorderNodesWithFlowMode(nodesIn, selectedToolsOrder) {
   // Grid layout for remaining tools
   const allOthers = [...buckets.green, ...buckets.yellow, ...buckets.white];
   const spacingY = 80;
-  const fullWidth = window.innerWidth;
-  const margin = 120;
+  const margin = 20;
   const nodeWidth = 200;
   const nodeSpacing = 32;
 
-  const rawCols = Math.floor((fullWidth - margin * 2 + nodeSpacing) / (nodeWidth + nodeSpacing));
-  const cols = Math.max(1, rawCols - 2);
+  const itemWidth = nodeWidth + nodeSpacing;
+  const availableWidth = containerWidth - margin;
+  const cols = Math.max(1, Math.floor(availableWidth / itemWidth));
 
   allOthers.forEach((node, idx) => {
     const col = idx % cols;
     const row = Math.floor(idx / cols);
     node.position = {
-      x: margin + col * (nodeWidth + nodeSpacing),
+      x: margin + col * itemWidth,
       y: 40 + chainNodes.length * 120 + row * spacingY
     };
   });

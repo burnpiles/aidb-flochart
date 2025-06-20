@@ -4,8 +4,10 @@ import { useEffect } from 'react';
 export default function useAutoCenterFlow(flowRef, deps = []) {
   useEffect(() => {
     const inst = flowRef?.current;
-    if (inst?.fitView) {
-      inst.fitView({ padding: 0.2 });
+    if (inst) {
+      setTimeout(() => {
+        inst.setViewport({ x: 0, y: 0, zoom: 1 }, { duration: 400 });
+      }, 350);
     }
-  }, deps);
+  }, [flowRef, ...deps]);
 }

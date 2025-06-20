@@ -8,8 +8,7 @@ export default function FlowStepPanel({
   selectedTools = [],
   handleToolChange = () => {},
   showOnlyFlowTools = false,
-  onBackToAllFlows = () => {},
-  onTakeScreenshot = () => {}
+  onBackToAllFlows = () => {}
 }) {
   const template = flowTemplates[currentTemplate] || {};
   const { title, steps = [] } = template;
@@ -17,23 +16,6 @@ export default function FlowStepPanel({
   return (
     <div>
       <h2 style={{ marginBottom: 10 }}>{title}</h2>
-      
-      <button
-        onClick={onTakeScreenshot}
-        style={{
-          marginBottom: 20,
-          padding: '10px 16px',
-          backgroundColor: '#f55f4e',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          width: '100%'
-        }}
-      >
-        📸 Take Screenshot
-      </button>
 
       {steps.map((step, idx) => (
         <div key={idx} style={{ marginBottom: 12 }}>

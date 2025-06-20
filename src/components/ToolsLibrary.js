@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import ReactFlow, { ReactFlowProvider } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { toPng } from 'html-to-image';
+import domtoimage from 'dom-to-image-more';
 
 import FlowStepPanel from './FlowStepPanel';
 import FlowListPanel from './FlowListPanel';
@@ -18,6 +18,33 @@ import useFlowchartBuilder from '../hooks/useFlowchartBuilder';
 import { useFilters } from '../hooks/FilterContext';
 
 const nodeTypes = { tool: ToolNode };
+
+function useContainerWidth(ref) {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const measure = () => {
+      if (ref.current) {
+        setWidth(ref.current.getBoundingClientRect().width);
+      }
+    };
+
+    measure();
+
+    const resizeObserver = new ResizeObserver(measure);
+    if (ref.current) {
+      resizeObserver.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        resizeObserver.unobserve(ref.current);
+      }
+    };
+  }, [ref]);
+
+  return width;
+}
 
 function ToolsLibraryContent() {
   const containerRef = useRef(null);
@@ -89,24 +116,19 @@ function ToolsLibraryContent() {
     });
   }, [allFlows, selectedCategory, selectedSubcategory]);
 
+  const flowListRelevance = useMemo(() => {
+    if (!filteredFlows || filteredFlows.length === 0) return 'default';
+    if (filteredFlows.some(f => f.relevance === 'green')) return 'green';
+    if (filteredFlows.some(f => f.relevance === 'yellow')) return 'yellow';
+    return 'default';
+  }, [filteredFlows]);
+
   function handleNodeClick(name) {
     const tool = toolsData[name];
     if (tool) setActiveTool({ ...tool, __toolName: name });
   }
 
-  async function handleExport() {
-    if (!containerRef.current) return;
-    try {
-      const dataUrl = await toPng(containerRef.current);
-      const link = document.createElement('a');
-      link.download = 'flochart_ai_screenshot.png';
-      link.href = dataUrl;
-      link.click();
-    } catch (e) {
-      console.error('Export failed:', e);
-    }
-  }
-
+  const containerWidth = useContainerWidth(reactFlowWrapperRef);
   const showOnlyFlowTools = !isMobile;
 
   const mobileNodes = useMemo(() => {
@@ -135,7 +157,7 @@ function ToolsLibraryContent() {
       return (a.data.toolName || '').localeCompare(b.data.toolName || '');
     });
 
-    return reorderNodesWithFlowMode(sorted, selectedTools);
+    return reorderNodesWithFlowMode(sorted, selectedTools, containerWidth);
   }, [
     toolsData,
     tagsData,
@@ -147,12 +169,38 @@ function ToolsLibraryContent() {
     isMobile,
     stepLabelsMap,
     highlightedTools,
-    showOnlyFlowTools
+    showOnlyFlowTools,
+    containerWidth
   ]);
 
   useEffect(() => {
     setNodes(mobileNodes);
   }, [mobileNodes]);
+
+  const showLegendBar = useMemo(() => {
+    return flowTemplates.length > 0;
+  }, [flowTemplates.length]);
+
+  const isResetActive = useMemo(() => {
+    return selectedCategory || selectedSubcategory || flowTemplates.length > 0;
+  }, [selectedCategory, selectedSubcategory, flowTemplates.length]);
+
+  async function handleExport() {
+    if (!containerRef.current) return;
+
+    try {
+      const dataUrl = await domtoimage.toPng(containerRef.current, {
+        bgcolor: '#ffffff',
+        cacheBust: true,
+      });
+      const link = document.createElement('a');
+      link.download = 'flochart_ai_screenshot.png';
+      link.href = dataUrl;
+      link.click();
+    } catch (e) {
+      console.error('Export failed:', e);
+    }
+  }
 
   return (
     <div
@@ -180,9 +228,12 @@ function ToolsLibraryContent() {
         <BuildSelector
           ref={buildSelectorRef}
           heading="Choose your project type"
+          isFlowchartActive={flowTemplates.length > 0}
           onFilterChange={(cat, sub) => {
             fetch('/tags.json').then(r => r.json()).then(data => {
               applyCategoryFilter(cat, sub, data);
+              setCurrentTemplate(0);
+              setActiveFlowTitle('');
               if (isMobile) {
                 const el = document.getElementById('tools-anchor');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -193,6 +244,7 @@ function ToolsLibraryContent() {
 
         <button
           onClick={() => {
+            if (!isResetActive) return;
             clearFilters();
             buildSelectorRef.current?.reset();
             setCurrentTemplate(0);
@@ -202,14 +254,15 @@ function ToolsLibraryContent() {
             width: '100%',
             marginTop: 10,
             padding: '14px',
-            backgroundColor: '#f5c542',
-            color: '#333',
+            backgroundColor: isResetActive ? '#f5c542' : '#808080',
+            color: isResetActive ? '#333' : '#a9a9a9',
             fontSize: '1.1rem',
             border: 'none',
-            borderRadius: 12
+            borderRadius: 12,
+            cursor: isResetActive ? 'pointer' : 'not-allowed'
           }}
         >
-          🧹 RESET FILTERS
+          RESET
         </button>
 
         <a
@@ -228,7 +281,8 @@ function ToolsLibraryContent() {
           style={{
             height: '100%',
             border: 'none',
-            background: '#e0e0e0',
+            background: !isPanelCollapsed ? '#aed6f1' : flowListRelevance === 'green' ? '#ccffcc' : flowListRelevance === 'yellow' ? '#fffcc9' : '#aed6f1',
+            color: '#333',
             cursor: 'pointer',
             padding: '0 8px',
             fontSize: '1rem',
@@ -238,7 +292,7 @@ function ToolsLibraryContent() {
             textAlign: 'center'
           }}
         >
-          {isPanelCollapsed ? 'Show Flowcharts' : 'Hide Flowcharts'}
+          {isPanelCollapsed ? 'Show Flocharts' : 'Hide Flocharts'}
         </button>
         <div style={{ width: isPanelCollapsed ? 0 : (isMobile ? '100%' : 320), padding: isPanelCollapsed ? 0 : 10, overflowY: 'auto', transition: 'width 0.3s ease, padding 0.3s ease' }}>
           {flowTemplates.length ? (
@@ -270,7 +324,7 @@ function ToolsLibraryContent() {
       </div>
 
       <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-        {!isMobile && <LegendBar />}
+        {!isMobile && showLegendBar && <LegendBar onExport={handleExport} />}
         <div ref={reactFlowWrapperRef} style={{ flex: 1, position: 'relative' }}>
           {!isMobile ? (
             <ReactFlow

@@ -7,7 +7,7 @@ const YELLOW = '#fffcc9';
 const BORDER_DEFAULT = '#ccc';
 const DARK_GREY = '#d4d4d4';
 
-const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFilterChange }, ref) => {
+const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFilterChange, isFlowchartActive }, ref) => {
   const { selectedCategory, selectedSubcategory, selectedTags } = useFilters();
   const [tagsData, setTagsData] = useState({});
   const [activeCategory, setActiveCategory] = useState(null);
@@ -40,22 +40,22 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
   };
 
   const handleMainClick = (cat) => {
-    if (cat === activeCategory && !activeSubcategory) {
-      setActiveCategory(null);
-      onFilterChange(null, null);
-    } else if (cat === activeCategory && activeSubcategory) {
+    if (cat === activeCategory && activeSubcategory) {
       setActiveSubcategory(null);
       onFilterChange(cat, null);
+    } else if (cat === activeCategory && !isFlowchartActive) {
+      setActiveCategory(null);
+      onFilterChange(null, null);
     } else {
       setActiveCategory(cat);
       setActiveSubcategory(null);
       onFilterChange(cat, null);
-      if (isMobile) {
-        setTimeout(() => {
-          const el = document.getElementById('tools-anchor');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
+    }
+    if (isMobile) {
+      setTimeout(() => {
+        const el = document.getElementById('tools-anchor');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     }
   };
 
@@ -205,7 +205,7 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
           marginBottom: '12px'
         }}
       >
-        👨🏻‍💻 SUBMIT TOOL
+        SUBMIT
       </button>
     </div>
   );
