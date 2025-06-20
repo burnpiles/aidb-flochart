@@ -11,7 +11,6 @@ import ToolModal from './ToolModal';
 import LegendBar from './LegendBar';
 
 import { generateToolNodes } from '../utils/generateToolNodes';
-import { generateUserEdges } from '../utils/generateEdges';
 import { reorderNodesWithFlowMode } from '../utils/layoutUtils';
 import useAutoCenterFlow from '../hooks/useAutoCenterFlow';
 import useFlowchartBuilder from '../hooks/useFlowchartBuilder';
@@ -103,7 +102,15 @@ function ToolsLibraryContent() {
     });
   }, []);
 
-  const allEdges = generateUserEdges(flowEdges);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const flowTitleFromUrl = params.get('flow');
+    if (flowTitleFromUrl) {
+      setActiveFlowTitle(decodeURIComponent(flowTitleFromUrl));
+    }
+  }, []);
+
+  const allEdges = flowEdges;
 
   const filteredFlows = useMemo(() => {
     const arr = Object.values(allFlows).flatMap(x => x);
@@ -217,6 +224,19 @@ function ToolsLibraryContent() {
       link.click();
     } catch (e) {
       console.error('Export failed:', e);
+    }
+  }
+
+  async function handleShare() {
+    if (!activeFlowTitle) return;
+    try {
+      const encodedTitle = encodeURIComponent(activeFlowTitle);
+      const shareUrl = `${window.location.origin}${window.location.pathname}?flow=${encodedTitle}`;
+      await navigator.clipboard.writeText(shareUrl);
+      alert('Share link copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy share link: ', err);
+      alert('Could not copy link to clipboard.');
     }
   }
 
@@ -345,7 +365,7 @@ function ToolsLibraryContent() {
       </div>
 
       <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-        {!isMobile && showLegendBar && <LegendBar onExport={handleExport} />}
+        {!isMobile && showLegendBar && <LegendBar onExport={handleExport} onShare={handleShare} />}
         <div ref={reactFlowWrapperRef} style={{ flex: 1, position: 'relative' }}>
           {!isMobile ? (
             <ReactFlow

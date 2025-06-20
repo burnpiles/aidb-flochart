@@ -25,8 +25,16 @@ export default function ToolNode({ data }) {
       <div style={{ ...styles.nodeBox, background }} onClick={() => onClick?.(toolName)}>
         {!isMobile && (
           <>
-            <Handle type="target" position={Position.Left} style={styles.handle} />
-            <Handle type="source" position={Position.Right} style={styles.handle} />
+            <Handle
+              type="target"
+              position={Position.Left}
+              style={{ ...styles.handle, left: -8 }}
+            />
+            <Handle
+              type="source"
+              position={Position.Right}
+              style={{ ...styles.handle, right: -8 }}
+            />
           </>
         )}
 

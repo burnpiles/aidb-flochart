@@ -1,7 +1,7 @@
 // src/components/LegendBar.js
 import React from 'react';
 
-export default function LegendBar({ onExport }) {
+export default function LegendBar({ onExport, onShare }) {
   const items = [
     { label: 'Connected', icon: '→', isArrow: true },
     { label: 'Match', color: '#ccffcc' },
@@ -24,9 +24,14 @@ export default function LegendBar({ onExport }) {
           <span style={{ fontSize: '0.9rem' }}>{it.label}</span>
         </div>
       ))}
-      <button onClick={onExport} style={{ marginLeft: 'auto', padding: '8px 12px', background: '#f55f4e', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
-        Export
-      </button>
+      <div style={{ marginLeft: 'auto', display: 'flex', gap: '12px' }}>
+        <button onClick={onShare} style={{ padding: '8px 12px', background: '#3498db', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
+          Share
+        </button>
+        <button onClick={onExport} style={{ padding: '8px 12px', background: '#f55f4e', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
+          Export
+        </button>
+      </div>
     </div>
   );
 }
