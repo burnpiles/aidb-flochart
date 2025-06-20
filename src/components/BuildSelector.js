@@ -92,7 +92,7 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
   return (
     <div style={{ textAlign: 'left' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
-        {['featured', 'assistants'].map(catKey => (
+        {['featured', 'brains'].map(catKey => (
           <button
             key={catKey}
             onClick={() => handleMainClick(catKey)}
@@ -113,13 +113,13 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
         ))}
       </div>
 
-      <hr style={{ border: 'none', borderTop: '2px solid #222', margin: '16px 0' }} />
+      <hr style={{ border: 'none', borderTop: '2px solid #fff', margin: '16px 0' }} />
 
       <h2 style={{ fontSize: '1.25rem', marginBottom: '16px' }}>{heading}</h2>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
         {sortedCategories
-          .filter(([key]) => key !== 'featured' && key !== 'assistants')
+          .filter(([key]) => key !== 'featured' && key !== 'brains')
           .map(([catKey, subItems]) => {
             const isCatActive =
               catKey === activeCategory ||
@@ -188,7 +188,7 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
           })}
       </div>
 
-      <hr style={{ border: 'none', borderTop: '2px solid #222', margin: '20px 0' }} />
+      <hr style={{ border: 'none', borderTop: '2px solid #fff', margin: '20px 0' }} />
 
       <button
         onClick={() => window.open("https://form.typeform.com/to/ioNBViWo", "_blank")}
@@ -214,7 +214,7 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
 function getEmoji(key) {
   const emojis = {
     featured: '⭐',
-    assistants: '🤖',
+    brains: '🧠',
     audio: '🎵',
     video: '🎥',
     images: '🖼️',

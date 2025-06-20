@@ -9,7 +9,7 @@ export default function FlowStepPanel({
   handleToolChange = () => {},
   showOnlyFlowTools = false,
   onBackToAllFlows = () => {},
-  onTakeScreenshot = () => {} // Add callback prop
+  onTakeScreenshot = () => {}
 }) {
   const template = flowTemplates[currentTemplate] || {};
   const { title, steps = [] } = template;
@@ -17,7 +17,7 @@ export default function FlowStepPanel({
   return (
     <div>
       <h2 style={{ marginBottom: 10 }}>{title}</h2>
-
+      
       <button
         onClick={onTakeScreenshot}
         style={{

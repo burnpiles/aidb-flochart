@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFilters } from '../hooks/FilterContext';
 
 const ALLOWED_MODAL_TAGS = [
@@ -12,10 +12,12 @@ const socialIcons = {
 };
 
 export default function ToolModal({ tool, onClose }) {
-  const { applyTagFilter } = useFilters();
+  const { applyCategoryFilter } = useFilters();
+  const [tagsMap, setTagsMap] = useState({});
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    fetch('/tags.json').then(r => r.json()).then(setTagsMap);
     return () => { document.body.style.overflow = ''; };
   }, []);
 
@@ -47,6 +49,34 @@ export default function ToolModal({ tool, onClose }) {
     );
   };
 
+  const handleTagClick = (tag) => {
+    const lower = tag.toLowerCase();
+    const entry = Object.entries(tagsMap).find(([parent, subs]) =>
+      parent === lower || subs.includes(lower)
+    );
+
+    const parent = entry?.[0] || null;
+    const isSub = entry?.[1]?.includes(lower);
+
+    applyCategoryFilter(isSub ? parent : lower, isSub ? lower : null, tagsMap);
+
+    setTimeout(() => {
+      onClose?.();
+      const el = document.getElementById('tools-anchor');
+      if (window.innerWidth < 768 && el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
+
+  const allowedTags = tool.tags?.filter(tag =>
+    ALLOWED_MODAL_TAGS.includes(tag.toLowerCase())
+  ) || [];
+
+  const secondaryTags = tool.tags?.filter(tag => {
+    const lower = tag.toLowerCase();
+    return !ALLOWED_MODAL_TAGS.includes(lower) &&
+      Object.values(tagsMap).some(subs => subs.includes(lower));
+  }) || [];
+
   return (
     <div
       className="modal-overlay"
@@ -70,6 +100,37 @@ export default function ToolModal({ tool, onClose }) {
             </p>
           )}
 
+          {allowedTags.length > 0 && (
+            <div style={styles.tagContainer}>
+              {allowedTags.map((tag, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleTagClick(tag);
+                  }}
+                  style={styles.tagPill}
+                >
+                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {secondaryTags.length > 0 && (
+            <>
+              <hr style={styles.hr} />
+              <div style={styles.tagContainer}>
+                {secondaryTags.map((tag, i) => (
+                  <span key={i} style={styles.subPill}>
+                    {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
 
           {tool.Website && (
             <a href={tool.Website} target="_blank" rel="noreferrer" style={styles.visitBtn}>
@@ -181,6 +242,21 @@ const styles = {
     background: '#f0f0f0',
     border: '1px solid #ccc',
     cursor: 'pointer',
+  },
+  subPill: {
+    padding: '6px 12px',
+    fontSize: '0.8rem',
+    borderRadius: 999,
+    background: '#fff',
+    border: '1px solid #ccc',
+    color: '#000',
+    cursor: 'default',
+    opacity: 0.8,
+  },
+  hr: {
+    border: 'none',
+    borderTop: '1px solid #ccc',
+    margin: '16px 0 8px',
   },
   visitBtn: {
     display: 'inline-block',

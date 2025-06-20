@@ -32,6 +32,7 @@ function ToolsLibraryContent() {
   const [activeFlowTitle, setActiveFlowTitle] = useState('');
   const [activeTool, setActiveTool] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isPanelCollapsed, setIsPanelCollapsed] = useState(false);
 
   const {
     selectedCategory,
@@ -39,7 +40,6 @@ function ToolsLibraryContent() {
     highlightedTools,
     tagMatchMode,
     clearFilters,
-    applyTagFilter,
     applyCategoryFilter
   } = useFilters();
 
@@ -54,7 +54,7 @@ function ToolsLibraryContent() {
     handleToolChange
   } = useFlowchartBuilder(activeFlowTitle, allFlows);
 
-  useAutoCenterFlow(reactFlowInstanceRef, [nodes, flowEdges]);
+  useAutoCenterFlow(reactFlowInstanceRef, [nodes, flowEdges, isPanelCollapsed]);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 768);
@@ -141,17 +141,18 @@ function ToolsLibraryContent() {
     tagsData,
     selectedCategory,
     selectedSubcategory,
-    highlightedTools.join(','), // re-render on change
     selectedTools,
     connectedToolNames,
     tagMatchMode,
     isMobile,
-    stepLabelsMap
+    stepLabelsMap,
+    highlightedTools,
+    showOnlyFlowTools
   ]);
 
   useEffect(() => {
-    setNodes([...mobileNodes]);
-  }, [JSON.stringify(mobileNodes)]);
+    setNodes(mobileNodes);
+  }, [mobileNodes]);
 
   return (
     <div
@@ -221,32 +222,51 @@ function ToolsLibraryContent() {
         </a>
       </div>
 
-      <div style={{ width: isMobile ? '100%' : 320, padding: 10, backgroundColor: '#fafafa', overflowY: 'auto' }}>
-        {flowTemplates.length ? (
-          <FlowStepPanel
-            flowTemplates={flowTemplates}
-            currentTemplate={currentTemplate}
-            setCurrentTemplate={setCurrentTemplate}
-            selectedTools={selectedTools}
-            handleToolChange={handleToolChange}
-            showOnlyFlowTools={showOnlyFlowTools}
-            onBackToAllFlows={() => {
-              setCurrentTemplate(0);
-              setActiveFlowTitle('');
-            }}
-            onTakeScreenshot={handleExport}
-          />
-        ) : (
-          !isMobile && (
-            <FlowListPanel
-              flows={filteredFlows}
-              onSelect={(title) => {
-                const found = Object.values(allFlows).flatMap(x => x).find(f => f.title.toLowerCase() === title.toLowerCase());
-                if (found) setActiveFlowTitle(found.title);
+      <div style={{ position: 'relative', backgroundColor: '#fafafa', display: 'flex' }}>
+        <button
+          onClick={() => setIsPanelCollapsed(!isPanelCollapsed)}
+          style={{
+            height: '100%',
+            border: 'none',
+            background: '#e0e0e0',
+            cursor: 'pointer',
+            padding: '0 8px',
+            fontSize: '1rem',
+            writingMode: 'vertical-rl',
+            textOrientation: 'mixed',
+            transform: 'rotate(180deg)',
+            textAlign: 'center'
+          }}
+        >
+          {isPanelCollapsed ? 'Show Flowcharts' : 'Hide Flowcharts'}
+        </button>
+        <div style={{ width: isPanelCollapsed ? 0 : (isMobile ? '100%' : 320), padding: isPanelCollapsed ? 0 : 10, overflowY: 'auto', transition: 'width 0.3s ease, padding 0.3s ease' }}>
+          {flowTemplates.length ? (
+            <FlowStepPanel
+              flowTemplates={flowTemplates}
+              currentTemplate={currentTemplate}
+              setCurrentTemplate={setCurrentTemplate}
+              selectedTools={selectedTools}
+              handleToolChange={handleToolChange}
+              showOnlyFlowTools={showOnlyFlowTools}
+              onBackToAllFlows={() => {
+                setCurrentTemplate(0);
+                setActiveFlowTitle('');
               }}
+              onTakeScreenshot={handleExport}
             />
-          )
-        )}
+          ) : (
+            !isMobile && (
+              <FlowListPanel
+                flows={filteredFlows}
+                onSelect={(title) => {
+                  const found = Object.values(allFlows).flatMap(x => x).find(f => f.title.toLowerCase() === title.toLowerCase());
+                  if (found) setActiveFlowTitle(found.title);
+                }}
+              />
+            )
+          )}
+        </div>
       </div>
 
       <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>

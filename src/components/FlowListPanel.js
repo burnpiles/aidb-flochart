@@ -19,7 +19,6 @@ function toYouTubeEmbed(url) {
 function FlowListPanel({ flows = [], onSelect }) {
   const [infoFlow, setInfoFlow] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMinimized, setIsMinimized] = useState(false);
 
   const handleSearchChange = (e) => setSearchQuery(e.target.value);
   const handleSuggestionClick = (sug) => setSearchQuery(sug);
@@ -115,23 +114,7 @@ function FlowListPanel({ flows = [], onSelect }) {
 
   return (
     <div style={{ textAlign: 'left', transition: 'height 0.3s ease', overflow: 'hidden' }}>
-      <button
-        onClick={() => setIsMinimized(!isMinimized)}
-        style={{
-          marginBottom: '12px',
-          padding: '8px 12px',
-          cursor: 'pointer',
-          fontWeight: 'bold',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          background: isMinimized ? '#eee' : '#ddd',
-          width: '100%'
-        }}
-      >
-        {isMinimized ? '➕ Show Flocharts' : '➖ Hide Flocharts'}
-      </button>
-
-      <div style={{ display: isMinimized ? 'none' : 'block' }}>
+      <div>
         <SearchControls
           searchQuery={searchQuery}
           handleSearchChange={handleSearchChange}

@@ -10,13 +10,13 @@
     "generation",
     "animation",
     "editing",
-    "avatar",
-    "analysis"
+    "avatarvid",
+    "analyze"
   ],
   "images": [
     "realistic",
     "artistic",
-    "avatar",
+    "avatarimg",
     "design",
     "retouch"
   ],
@@ -30,10 +30,10 @@
   "write": [
     "stories",
     "dialogue",
-    "analysis",
+    "insights",
     "rewrite",
     "marketing"
   ],
-  "assistants": [],
+  "brains": [],
   "featured": []
 }
