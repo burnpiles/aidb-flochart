@@ -199,8 +199,8 @@ function ToolsLibraryContent() {
   }, [flowTemplates.length]);
 
   const isResetActive = useMemo(() => {
-    return selectedCategory || selectedSubcategory || flowTemplates.length > 0;
-  }, [selectedCategory, selectedSubcategory, flowTemplates.length]);
+    return selectedCategory || selectedSubcategory || flowTemplates.length > 0 || searchQuery;
+  }, [selectedCategory, selectedSubcategory, flowTemplates.length, searchQuery]);
 
   async function handleExport() {
     if (!containerRef.current) return;
@@ -263,6 +263,7 @@ function ToolsLibraryContent() {
           onClick={() => {
             if (!isResetActive) return;
             clearFilters();
+            setSearchQuery('');
             buildSelectorRef.current?.reset();
             setCurrentTemplate(0);
             setActiveFlowTitle('');
