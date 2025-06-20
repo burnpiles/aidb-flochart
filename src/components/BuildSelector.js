@@ -1,5 +1,5 @@
 // src/components/BuildSelector.js
-import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
+import React, { useState, useEffect, forwardRef, useImperativeHandle, useCallback } from 'react';
 import { useFilters } from '../hooks/FilterContext';
 
 const GREEN = '#ccffcc';
@@ -14,6 +14,13 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
   const [activeSubcategory, setActiveSubcategory] = useState(null);
 
   const isMobile = window.innerWidth < 768;
+
+  const findParentCategory = useCallback((sub) => {
+    for (const [cat, subs] of Object.entries(tagsData)) {
+      if (subs.includes(sub)) return cat;
+    }
+    return null;
+  }, [tagsData]);
 
   useEffect(() => {
     fetch('/tags.json')
@@ -30,14 +37,7 @@ const BuildSelector = forwardRef(({ heading = "What do you want to build?", onFi
 
     setActiveCategory(fallbackCat);
     setActiveSubcategory(selectedSubcategory);
-  }, [selectedCategory, selectedSubcategory, selectedTags]);
-
-  const findParentCategory = (sub) => {
-    for (const [cat, subs] of Object.entries(tagsData)) {
-      if (subs.includes(sub)) return cat;
-    }
-    return null;
-  };
+  }, [selectedCategory, selectedSubcategory, selectedTags, findParentCategory]);
 
   const handleMainClick = (cat) => {
     if (cat === activeCategory && activeSubcategory) {
