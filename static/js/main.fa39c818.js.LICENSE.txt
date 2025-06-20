@@ -1,3 +1,5 @@
+/*! dom-to-image-more 08-05-2025 */
+
 /**
  * @license React
  * react-dom-client.production.js
