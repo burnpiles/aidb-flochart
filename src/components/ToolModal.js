@@ -41,6 +41,7 @@ export default function ToolModal({ tool, onClose }) {
         width="100%"
         height="300"
         src={`https://www.youtube.com/embed/${id}`}
+        title="YouTube Tutorial"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen

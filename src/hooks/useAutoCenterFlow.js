@@ -9,5 +9,6 @@ export default function useAutoCenterFlow(flowRef, deps = []) {
         inst.setViewport({ x: 0, y: 0, zoom: 1 }, { duration: 400 });
       }, 350);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flowRef, ...deps]);
 }

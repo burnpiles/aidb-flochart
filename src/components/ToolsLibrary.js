@@ -32,13 +32,14 @@ function useContainerWidth(ref) {
     measure();
 
     const resizeObserver = new ResizeObserver(measure);
-    if (ref.current) {
-      resizeObserver.observe(ref.current);
+    const node = ref.current;
+    if (node) {
+      resizeObserver.observe(node);
     }
 
     return () => {
-      if (ref.current) {
-        resizeObserver.unobserve(ref.current);
+      if (node) {
+        resizeObserver.unobserve(node);
       }
     };
   }, [ref]);
